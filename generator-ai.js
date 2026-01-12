@@ -133,10 +133,14 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
         };
 
         if (saveUserReview(reviewData)) {
-            // Show save confirmation
+            // Show save confirmation with submit option
             const saveNotice = document.createElement('div');
-            saveNotice.style.cssText = 'background-color: #4CAF50; color: white; padding: 10px 15px; margin-top: 20px; font-size: 12px; text-align: center;';
-            saveNotice.innerHTML = '✓ Review saved to your collection! <a href="my-reviews.html" style="color: white; text-decoration: underline;">View My Reviews</a>';
+            saveNotice.style.cssText = 'background-color: #333; color: white; padding: 15px 20px; margin-top: 20px; font-size: 13px; text-align: center;';
+            saveNotice.innerHTML = `
+                <div style="margin-bottom: 10px;">Review saved to your collection!</div>
+                <a href="my-reviews.html" style="display: inline-block; background: white; color: #333; padding: 8px 16px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 10px;">View My Reviews</a>
+                <a href="community.html" style="display: inline-block; background: #ff3530; color: white; padding: 8px 16px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Submit to Community</a>
+            `;
             document.getElementById('outputVerdict').after(saveNotice);
         }
 

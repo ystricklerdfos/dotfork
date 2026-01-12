@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Community Reviews - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Reviews</a>
+        <a href="deals.html">Deals</a>
+        <a href="generator.html">Generator</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <h1>Community Reviews</h1>
+        <p style="margin-bottom: 10px; color: #666; font-size: 13px;">
+            User-generated reviews submitted by the DOTFORK community. Create your own review and submit it to appear here.
+        </p>
+        <p style="margin-bottom: 30px; font-size: 12px;">
+            <span id="reviewCount" style="color: #ff3530; font-weight: 700;">0</span> reviews submitted
+        </p>
+
+        <div style="margin-bottom: 30px;">
+            <a href="generator.html" style="display: inline-block; background-color: #ff3530; color: #ffffff; padding: 10px 20px; font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;">+ Generate & Submit Your Review</a>
+            <a href="my-reviews.html" style="display: inline-block; margin-left: 10px; background-color: #333; color: #ffffff; padding: 10px 20px; font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;">My Reviews</a>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-filter" style="margin-bottom: 30px;">
+            <div class="category-filter-label">Filter by Rating</div>
+            <div class="category-buttons">
+                <button class="category-btn active" data-filter="all">All</button>
+                <button class="category-btn" data-filter="high">High (7+)</button>
+                <button class="category-btn" data-filter="mid">Mid (4-7)</button>
+                <button class="category-btn" data-filter="low">Low (0-4)</button>
+            </div>
+        </div>
+
+        <div id="communityReviews">
+            <p style="color: #999; font-style: italic; text-align: center; padding: 40px;">Loading community reviews...</p>
+        </div>
+
+        <div id="emptyState" style="display: none; text-align: center; padding: 60px 20px; background: #f9f9f9;">
+            <div style="font-size: 48px; margin-bottom: 20px;">&#127760;</div>
+            <div style="font-size: 18px; margin-bottom: 10px; font-weight: 700;">No community reviews yet</div>
+            <div style="font-size: 13px; color: #666; margin-bottom: 20px;">
+                Be the first to submit a review to the community archive!
+            </div>
+            <a href="generator.html" style="display: inline-block; background-color: #ff3530; color: #ffffff; padding: 12px 25px; font-size: 12px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;">Generate Your First Review</a>
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+<script>
+const COMMUNITY_API = '/api/community-reviews';
+let allReviews = [];
+let currentFilter = 'all';
+
+async function loadCommunityReviews() {
+    const container = document.getElementById('communityReviews');
+    const emptyState = document.getElementById('emptyState');
+    const countEl = document.getElementById('reviewCount');
+
+    try {
+        const response = await fetch(COMMUNITY_API);
+        if (!response.ok) throw new Error('Failed to load reviews');
+
+        const data = await response.json();
+        allReviews = data.reviews || [];
+        countEl.textContent = allReviews.length;
+
+        if (allReviews.length === 0) {
+            container.innerHTML = '';
+            emptyState.style.display = 'block';
+            return;
+        }
+
+        emptyState.style.display = 'none';
+        renderReviews();
+    } catch (error) {
+        console.error('Error loading reviews:', error);
+        container.innerHTML = `<p style="color: #ff3530; text-align: center; padding: 40px;">Error loading reviews: ${error.message}</p>`;
+    }
+}
+
+function filterReviews(filter) {
+    currentFilter = filter;
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+    renderReviews();
+}
+
+function renderReviews() {
+    const container = document.getElementById('communityReviews');
+
+    let filtered = allReviews;
+    if (currentFilter === 'high') {
+        filtered = allReviews.filter(r => r.rating >= 7);
+    } else if (currentFilter === 'mid') {
+        filtered = allReviews.filter(r => r.rating >= 4 && r.rating < 7);
+    } else if (currentFilter === 'low') {
+        filtered = allReviews.filter(r => r.rating < 4);
+    }
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<p style="color: #999; text-align: center; padding: 40px;">No reviews match this filter.</p>`;
+        return;
+    }
+
+    let html = '';
+    filtered.forEach(review => {
+        const bnwBadge = review.isBNW ? '<span class="bnw-badge">Best New Website</span>' : '';
+        const submittedDate = review.submittedAt ? new Date(review.submittedAt).toLocaleDateString() : review.date;
+
+        html += `
+            <div style="margin-bottom: 25px; padding: 25px; background: #f9f9f9; border-left: 3px solid #ff3530;">
+                <div style="margin-bottom: 12px;">
+                    <span style="font-size: 20px; font-weight: 700;">${review.site?.name || 'Unknown'}</span>
+                    <span class="rating-small">${review.rating?.toFixed(1) || '0.0'}</span>
+                    ${bnwBadge}
+                </div>
+                <div style="font-size: 12px; color: #999; margin-bottom: 15px;">
+                    <a href="https://${review.site?.url || '#'}" target="_blank" style="color: #ff3530;">${review.site?.url || ''}</a> |
+                    ${review.category || 'Unknown'} |
+                    Reviewed by ${review.reviewer || 'Anonymous'} |
+                    Submitted ${submittedDate}
+                </div>
+                <div style="font-size: 14px; color: #333; margin-bottom: 15px; line-height: 1.6; font-weight: 700;">
+                    VERDICT: ${review.verdict || ''}
+                </div>
+                <div style="font-size: 13px; color: #555; line-height: 1.6;">
+                    ${review.reviewText ? review.reviewText.split('\n\n')[0].substring(0, 400) + '...' : ''}
+                </div>
+                <button onclick="viewFullReview('${review.id}')" style="margin-top: 15px; background: none; border: none; color: #ff3530; cursor: pointer; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 0;">Read Full Review</button>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+}
+
+function viewFullReview(reviewId) {
+    const review = allReviews.find(r => r.id === reviewId);
+    if (!review) return;
+
+    const modal = document.createElement('div');
+    modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 1000; overflow-y: auto; padding: 20px;';
+
+    const paragraphs = review.reviewText ? review.reviewText.split('\n\n').map(p => `<p>${p}</p>`).join('') : '<p>No review text available.</p>';
+    const bnwBadge = review.isBNW ? '<span class="bnw-badge">Best New Website</span>' : '';
+
+    modal.innerHTML = `
+        <div style="max-width: 800px; margin: 40px auto; background: white; padding: 40px; position: relative;">
+            <button onclick="this.closest('div').parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; line-height: 1;">&times;</button>
+            <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #ff3530; margin-bottom: 15px;">Community Submission</div>
+            <div class="review-header">
+                <h1 class="review-title" style="margin: 0 0 12px 0;">${review.site?.name || 'Unknown'}</h1>
+                <div class="review-meta">${review.category || 'Unknown'} | Reviewed by ${review.reviewer || 'Anonymous'} | ${review.date || ''}</div>
+                <div class="review-url"><a href="https://${review.site?.url || '#'}" target="_blank" style="color: #ff3530;">${review.site?.url || ''}</a></div>
+                <div class="rating">${review.rating?.toFixed(1) || '0.0'}</div>
+                ${bnwBadge}
+            </div>
+            <div class="review-body" style="margin-top: 25px;">${paragraphs}</div>
+            <div class="verdict-box" style="margin-top: 25px;"><strong>VERDICT:</strong> ${review.verdict || ''}</div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.remove();
+    });
+}
+
+// Set up filter buttons
+document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', () => filterReviews(btn.dataset.filter));
+});
+
+// Load reviews on page load
+loadCommunityReviews();
+</script>
+
+</body>
+</html>
