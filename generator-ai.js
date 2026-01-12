@@ -2,10 +2,13 @@
 
 // Use relative URL for Vercel serverless function
 const API_URL = '/api/generate-review';
-const SAVE_URL = '/api/save-review';
+const COMMUNITY_API = '/api/community-reviews';
 
 // Store for user-generated reviews (persisted to localStorage)
 const USER_REVIEWS_KEY = 'dotfork_user_reviews';
+
+// Track current review for submission
+let currentReviewData = null;
 
 function extractDomain(url) {
     try {
@@ -40,6 +43,53 @@ function saveUserReview(review) {
     } catch (e) {
         console.error('Failed to save review:', e);
         return false;
+    }
+}
+
+async function submitToCommunity() {
+    if (!currentReviewData) {
+        alert('No review to submit');
+        return;
+    }
+
+    const btn = document.getElementById('submitCommunityBtn');
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'SUBMITTING...';
+    }
+
+    try {
+        const response = await fetch(COMMUNITY_API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(currentReviewData)
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Failed to submit');
+        }
+
+        // Mark as submitted locally
+        const reviews = getUserReviews();
+        const review = reviews.find(r => r.filename === currentReviewData.filename);
+        if (review) {
+            review.submitted = true;
+            review.submittedAt = new Date().toISOString();
+            localStorage.setItem(USER_REVIEWS_KEY, JSON.stringify(reviews));
+        }
+
+        if (btn) {
+            btn.textContent = 'SUBMITTED!';
+            btn.style.background = '#4CAF50';
+        }
+        alert('Review submitted to community archive!');
+    } catch (e) {
+        alert('Error submitting: ' + e.message);
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = 'SUBMIT TO COMMUNITY';
+        }
     }
 }
 
@@ -119,7 +169,7 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
         document.getElementById('outputVerdict').innerHTML = '<strong>VERDICT:</strong> ' + review.verdict;
 
         // Save to user's local collection
-        const reviewData = {
+        currentReviewData = {
             site: { name: review.title, url: domain },
             category: review.category,
             reviewer: review.reviewer,
@@ -132,14 +182,19 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
             userGenerated: true
         };
 
-        if (saveUserReview(reviewData)) {
+        if (saveUserReview(currentReviewData)) {
+            // Remove any existing save notice
+            const existingNotice = document.querySelector('.save-notice');
+            if (existingNotice) existingNotice.remove();
+
             // Show save confirmation with submit option
             const saveNotice = document.createElement('div');
+            saveNotice.className = 'save-notice';
             saveNotice.style.cssText = 'background-color: #333; color: white; padding: 15px 20px; margin-top: 20px; font-size: 13px; text-align: center;';
             saveNotice.innerHTML = `
                 <div style="margin-bottom: 10px;">Review saved to your collection!</div>
                 <a href="my-reviews.html" style="display: inline-block; background: white; color: #333; padding: 8px 16px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 10px;">View My Reviews</a>
-                <a href="community.html" style="display: inline-block; background: #ff3530; color: white; padding: 8px 16px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Submit to Community</a>
+                <button id="submitCommunityBtn" onclick="submitToCommunity()" style="display: inline-block; background: #ff3530; color: white; padding: 8px 16px; border: none; cursor: pointer; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Submit to Community</button>
             `;
             document.getElementById('outputVerdict').after(saveNotice);
         }
