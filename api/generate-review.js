@@ -144,8 +144,12 @@ VERDICT: [one cynical sentence]`;
         const categoryMatch = response.match(/CATEGORY:\s*(.+)/);
         const pithyCategoryMatch = response.match(/PITHY_CATEGORY:\s*(.+)/);
         const foundedMatch = response.match(/FOUNDED:\s*(.+)/);
-        const reviewMatch = response.match(/REVIEW_START\n([\s\S]+?)\nREVIEW_END/);
+        const reviewMatch = response.match(/REVIEW_START\s*([\s\S]+?)\s*REVIEW_END/);
         const verdictMatch = response.match(/VERDICT:\s*(.+)/);
+
+        if (!reviewMatch) {
+            console.error('Failed to parse review. Raw response:', response.substring(0, 500));
+        }
 
         const category = categoryMatch ? categoryMatch[1].trim() : 'SaaS';
         const pithyCategory = pithyCategoryMatch ? pithyCategoryMatch[1].trim() : 'Digital Product';
