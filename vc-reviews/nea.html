@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NEA Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">NEA</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Kamie Jowalski | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://nea.com" target="_blank">nea.com</a>
+            </div>
+            <div class="rating">4.2</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> NEA</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://nea.com" target="_blank">nea.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 1977</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $25B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>The hero section declares "We partner with exceptional entrepreneurs to build iconic companies" in what appears to be a custom font stack that falls back to Helvetica—because apparently when you're managing $25 billion, you can't spring for proper web font licensing. A quick peek at their source reveals a React-heavy build running on what looks like a custom CMS, but the real crime here is the 847KB of JavaScript they're shipping for what is essentially a glorified brochure site. Their main bundle includes three different animation libraries (GSAP, Framer Motion, AND some custom scroll magic) because why optimize when you can just throw frameworks at the problem like venture capital at a crypto startup?</p>
+
+            <p>I once dated a Product Manager at Greylock who told me that VCs are basically just fancy websites with bank accounts attached, and NEA's technical choices prove this theory. Their CSS is a masterclass in specificity hell—I'm talking !important declarations scattered throughout like confetti at a unicorn IPO. The typography scaling is inconsistent (their h2 tags range from 24px to 31px with no discernible system), and don't get me started on their grid implementation. They're using CSS Grid in some components and Flexbox in others, sometimes within the same container, like they hired three different agencies and nobody communicated. The mobile experience breaks spectacularly on their portfolio grid, with cards overlapping in a way that would make any self-respecting frontend developer weep into their oat milk latte.</p>
+
+            <p>Performance-wise, this site is what happens when you have unlimited budget but zero technical oversight. Their Lighthouse score probably hovers around 67 on desktop and crashes harder than a Web3 gaming platform on mobile. The LCP (Largest Contentful Paint) takes 3.2 seconds because they're loading a 2.1MB hero video that autoplays on every page visit—apparently their carbon footprint calculator doesn't include their website's energy consumption. They've got 23 third-party tracking scripts running (including both Google Analytics AND Google Tag Manager, because redundancy is key when you're hemorrhaging user data), plus HubSpot, Segment, and what appears to be a custom analytics solution. For a firm that probably lectures portfolio companies about "lean technical architecture," they're serving more JavaScript than a cryptocurrency exchange.</p>
+
+            <p>The real tragedy is in the details: their contact forms use inline event handlers (it's 2024, people!), their image optimization is nonexistent (47 different sized logos for the same 200px container), and their accessibility score would make a bootcamp graduate blush. No ARIA labels, heading hierarchy that jumps from h1 to h4, and color contrast ratios that fail WCAG AA standards. Most damning of all? Their careers page returns a 404, which feels like an accidental moment of honesty about their technical priorities.</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A $25 billion fund delivering a website that performs worse than most Series A portfolio companies—peak venture capital irony wrapped in 800KB of unnecessary JavaScript.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

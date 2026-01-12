@@ -111,7 +111,8 @@ CRITICAL REQUIREMENTS:
 4. Voice: First person for most reviewers, swearing is fine when appropriate, self-aware
 5. No formulas: Every review should feel unique. Don't follow templates.
 6. Categories to critique: pricing, design choices, UX decisions, marketing copy, the general vibe
-7. Match your persona: Write EXACTLY how ${reviewer.name} would
+7. TECHNICAL DEPTH: Go nerdy! Comment on their tech stack if visible (React, Next.js, etc.), page load times, whether they use Webflow/Squarespace/custom builds, any exposed API endpoints, their GitHub presence, DNS records, SSL cert details, meta tags, accessibility scores, bloated JS bundles, unnecessary tracking scripts, etc.
+8. Match your persona: Write EXACTLY how ${reviewer.name} would
 
 OPENING SENTENCE VARIETY - NEVER USE:
 ❌ "There's something [adverb]..."

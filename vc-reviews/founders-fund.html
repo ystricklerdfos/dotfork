@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Founders Fund Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">Founders Fund</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Shyan Rreiber | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://foundersfund.com" target="_blank">foundersfund.com</a>
+            </div>
+            <div class="rating">5.7</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> Founders Fund</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://foundersfund.com" target="_blank">foundersfund.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 2005</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $11B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>The `<title>` tag simply reads "Founders Fund" – not even "Founders Fund | Venture Capital" – which tells you everything about Peter Thiel's approach to basic SEO hygiene. Like the Gilded Age railroad magnates who built transcontinental lines but couldn't be bothered to install proper passenger seating, this $11 billion fund has mastered the art of moving mountains of capital while completely botching the fundamentals of web presence. Their site runs on what appears to be a custom React build, but dig into the source and you'll find a Frankenstein's monster of `/static/js/` files totaling 847KB – because nothing says "we fund lean startups" like shipping enough JavaScript to choke a T1 line. The CSS architecture suggests multiple developers worked in isolation, with class names ranging from semantic `.portfolio-grid` to the inexplicable `.comp-lkq4z8x7`.</p>
+
+            <p>Performance-wise, this is a Lighthouse score that would make a Series A pitch deck blush with shame. The homepage loads a 3.2MB hero video that autoplays on mobile (RIP to anyone on a metered connection), while the actual portfolio companies are loaded via a client-side API call that returns a 400KB JSON blob. It's the digital equivalent of the Dutch East India Company's accounting books – technically functional but wildly inefficient. The Largest Contentful Paint clocks in around 4.8 seconds on a fast connection, which means potential LPs are staring at a blank white screen longer than most startups survive their first investor meeting. Meanwhile, their `/api/portfolio` endpoint appears to be hitting a database directly with zero caching headers, because why optimize when you can just throw more AWS instances at the problem?</p>
+
+            <p>The irony deepens when you examine their tracking setup: 23 different third-party scripts, including HubSpot, Segment, Google Tag Manager, and what appears to be a custom analytics solution that phones home to `metrics.foundersfund.internal`. For a firm that's invested in privacy-focused companies and regularly pontificates about surveillance capitalism, they're running more trackers than a Black Friday e-commerce site. The Content Security Policy is essentially non-existent – just `default-src: *` like they're actively inviting XSS attacks. It's the venture capital equivalent of the 19th-century whaling ships that hunted sperm whales to fuel oil lamps while their own vessels leaked by moonlight. The `robots.txt` file is a single line: "User-agent: *", which either shows supreme confidence or complete ignorance of how search engines work.</p>
+
+            <p>Navigation feels like it was designed by someone who's never actually used a website – the mobile hamburger menu requires two taps to open (thanks to a race condition in their event handlers), and the portfolio filtering system breaks entirely if you select more than three categories simultaneously. The infamous "thesis" page loads via a route that suggests they're using React Router, but the actual implementation spawns a new `XMLHttpRequest` for each thesis point, creating a waterfall effect that would make a frontend engineer weep. Their team photos are served at full 4K resolution (2.1MB each) then scaled down via CSS, because apparently no one at this $11B fund has heard of responsive images or the `<picture>` element. The contact form submits to a `/webhook/contact` endpoint that returns a raw JSON response instead of a proper success page – the digital equivalent of robber barons who built gilded mansions but forgot to install proper plumbing.</p>
+
+            <p>The DNS setup reveals they're running on Cloudflare (smart) but with all the performance optimizations disabled (less smart), suggesting someone read exactly one Medium article about CDNs and called it a day. The SSL certificate is properly configured, though the HSTS header is missing, and there's a curious redirect chain that bounces through `www.foundersfund.com` → `foundersfund.com` → `foundersfund.com/home` before landing on the actual homepage. It's like watching Cornelius Vanderbilt build a railroad that technically gets you from point A to point B, but only after stopping at seven unnecessary stations and requiring passengers to change trains twice. The footer contains a copyright notice from 2019, which either indicates they haven't touched this code in years or they're so focused on "10x-ing the future" that they forgot how to update a simple date string.</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A technically functional monument to the fundamental disconnect between Silicon Valley's "move fast and break things" philosophy and the basic competency expected of a firm managing eleven billion dollars – it's fast alright, fast at breaking web standards.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

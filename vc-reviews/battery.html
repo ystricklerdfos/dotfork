@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Battery Ventures Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">Battery Ventures</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Tarcus Mhorne | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://battery.com" target="_blank">battery.com</a>
+            </div>
+            <div class="rating">6.8</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> Battery Ventures</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://battery.com" target="_blank">battery.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 1983</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $13B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>Battery Ventures loads 847KB of JavaScript on their homepage just to display a static hero section and some portfolio logos—a bundle size that would make their own portfolio companies weep into their Series A pitch decks. Digging into their tech stack reveals a Next.js 13 implementation that's surprisingly competent, with proper SSG for their portfolio pages and a clean React component architecture. The `/api/companies` endpoint returns a well-structured JSON response with 0.3s latency, though they're inexplicably client-side rendering their team bios when server-side would cut their LCP by 800ms. Their webpack config shows they're actually code-splitting routes properly—a rare sign of technical literacy in VC-land.</p>
+
+            <p>The irony hits hardest in their developer tooling choices. Here's a firm that preaches "technical excellence" to startups while running Google Tag Manager with 14 different tracking pixels, including three separate HubSpot instances that fire on every scroll event. Their CSP header is completely absent, and they're loading unoptimized hero images at 2.4MB per viewport. The portfolio filtering system uses a debounced search that actually works smoothly (shocking), but they're re-rendering the entire DOM on every keystroke instead of virtualizing the list. For a $13B AUM firm, the fact that their mobile nav breaks on iOS Safari 15.x because they forgot to vendor-prefix their CSS transforms is genuinely embarrassing.</p>
+
+            <p>Their hosting setup tells a more promising story—Vercel deployment with proper CDN distribution and smart HTTP/2 server push for critical resources. The DNS configuration through Cloudflare shows someone actually knows what they're doing, with appropriate security headers and a reasonable cache strategy. Their internal `/build-manifest.json` reveals they're properly chunking vendor libraries and implementing dynamic imports for their case study components. The site achieves a respectable 78 Lighthouse performance score, dragged down primarily by those bloated tracking scripts rather than fundamental architectural problems.</p>
+
+            <p>Where Battery truly delivers is in their content management approach. Their portfolio company data is properly normalized, with consistent schema markup and genuine attention to semantic HTML structure. The team directory uses proper ARIA labels and maintains keyboard navigation—accessibility choices that put most VC sites to shame. Their blog implementation shows they understand the difference between marketing fluff and technical substance, with properly formatted code snippets and respectable meta tag hygiene. The `/sitemap.xml` is comprehensive and actually reflects their real URL structure, suggesting someone competent is managing their SEO strategy.</p>
+
+            <p>The verdict: Battery Ventures has built a technically solid foundation wrapped in typical VC excess. Their core architecture demonstrates real engineering competency—the React patterns are clean, the API design is sensible, and their deployment pipeline shows production-grade thinking. But the gratuitous tracking bloat and performance-killing third-party integrations reveal the eternal tension between technical teams and marketing departments. For a firm that should be setting technical standards for their portfolio, it's a frustratingly mixed bag that lands squarely in "good but could be great" territory.</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A technically competent Next.js implementation sabotaged by marketing department tracking bloat and 2.4MB hero images that scream "we hire engineers but don't listen to them."
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

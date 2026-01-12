@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spark Capital Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">Spark Capital</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Michard Reltzer | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://sparkcapital.com" target="_blank">sparkcapital.com</a>
+            </div>
+            <div class="rating">5.9</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> Spark Capital</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://sparkcapital.com" target="_blank">sparkcapital.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 2005</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $5B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>The hero animation on Spark Capital's website loads 847KB of Lottie JSON just to make some geometric shapes wiggle like a screensaver from 2003. Their Next.js implementation is technically competent—proper hydration, decent component architecture—but suffers from the kind of over-engineering that makes you wonder if they're trying to impress YC applicants with their Vercel deploy previews. The site clocks a 2.3-second Largest Contentful Paint, which is ironic considering they've funded three different performance monitoring startups. Most damning: their `_app.js` bundle includes both Framer Motion AND React Spring, because apparently choosing one animation library is for Series A companies.</p>
+
+            <p>Diving into their source reveals the classic VC tech stack contradiction: preaching "lean startup methodology" while running a Gatsby-to-Next.js migration that left behind 23 unused GraphQL queries and a `/api/legacy-portfolio` endpoint that returns a 500 error with a helpful "TODO: fix this before demo day" comment. Their tracking setup is a privacy advocate's nightmare—Google Analytics, Hotjar, Segment, Mixpanel, and something called "spark-internal-metrics.js" that appears to log every mouse movement to a Firebase Realtime Database. The irony is exquisite: a firm that invested in privacy-focused startups while personally collecting more user data than Cambridge Analytica.</p>
+
+            <p>The mobile experience feels like it was tested exclusively on MacBook Pros held at arm's length. Their CSS Grid implementation breaks spectacularly on anything smaller than an iPad, causing the "Our Portfolio" section to become a horizontal-scrolling nightmare of overlapping startup logos. The responsive breakpoints are hardcoded pixel values (seriously, `@media (max-width: 834px)` screams "we only tested this on one device"), and their touch targets violate WCAG guidelines so aggressively you'd think accessibility was a competitor they're trying to disrupt. Navigation requires the finger precision of a Swiss watchmaker.</p>
+
+            <p>Most tellingly, their GitHub integration exposes a `.env.example` file containing placeholder values like `AIRTABLE_API_KEY=your_key_here` and `SLACK_WEBHOOK_URL=https://hooks.slack.com/YOUR_WEBHOOK`, suggesting their due diligence process is more thorough than their own development practices. The site's security headers are decent (Content-Security-Policy properly configured, no exposed AWS credentials in the source maps), but their contact form posts to a Netlify function that returns a generic success message regardless of whether the email actually sends. It's the digital equivalent of a venture capitalist's promise to "circle back next quarter."</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A technically adequate monument to the venture capital industry's fundamental inability to follow its own advice about user experience and product-market fit.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

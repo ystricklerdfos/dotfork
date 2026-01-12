@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lux Capital Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">Lux Capital</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Wavid Foster Dallace | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://luxcapital.com" target="_blank">luxcapital.com</a>
+            </div>
+            <div class="rating">5.2</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> Lux Capital</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://luxcapital.com" target="_blank">luxcapital.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 2000</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $5B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>The meta description reads "Lux Capital partners with scientists and entrepreneurs" but their `<title>` tag just says "Lux Capital" like they ran out of SEO budget after buying the domain. This is a firm managing $5 billion who apparently couldn't spare $500 for basic on-page optimization¹. Their homepage loads a catastrophic 3.2MB of resources, including a mysterious `lux-animations.js` bundle that weighs 847KB and does absolutely nothing except make their logo fade in over 2.3 seconds. The irony is palpable: they're funding the next generation of lean startups while their own site has the technical elegance of a WordPress blog from 2008.</p>
+
+            <p>Diving into the source reveals they're running on custom React with Next.js 12.1.0 - not even the latest version - served through Vercel's CDN. Their CSS architecture is a masterclass in what not to do: 47 unused stylesheets, inline styles scattered like breadcrumbs, and a component called `<HeroAnimationWrapper>` that renders an empty div with `position: absolute; z-index: 9999;`. The real gem is their contact form, which POSTs to `/api/contact-submit` and returns a 500 error in production². They're literally telling entrepreneurs to "think different" while their own infrastructure thinks differently about working properly.</p>
+
+            <p>The tracking situation reads like a privacy nightmare. Google Analytics, Facebook Pixel, LinkedIn Insight Tag, Hotjar, Mixpanel, Segment, and something called `lux-internal-analytics.js` that phones home to `metrics.luxcapital.internal` - a subdomain that resolves to a DigitalOcean droplet running Ubuntu 18.04³. For a firm that claims to back "frontier technology," they sure love collecting visitor data like it's 2015. Their cookie banner doesn't even work on mobile Safari, which is probably for the best since clicking "Accept All" triggers 23 third-party scripts including one that loads TikTok's pixel tracking library. Because nothing says "serious institutional investor" like retargeting LPs through dance videos.</p>
+
+            <p>The mobile experience deserves its own category at the Webby Awards: "Most Creative Use of Horizontal Scrollbars." Their responsive breakpoints appear to be `mobile: 320px, tablet: 1024px, desktop: 1920px` with absolutely nothing in between, creating a delightful lottery where your iPhone might render the desktop layout rotated 90 degrees⁴. The team page loads 42 high-resolution headshots at 2400x3600px each, unoptimized, because apparently WebP is too cutting-edge for a fund that invests in quantum computing startups. Their blog section returns a 404, their careers page links to Lever but the integration is broken, and their portfolio grid crashes Mobile Chrome if you scroll too fast. It's like they're actively trying to repel the talent they claim to seek.</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A $5 billion fund running a website that wouldn't pass a junior developer's code review - the technical equivalent of showing up to pitch Sand Hill Road in flip-flops and a stained hoodie.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

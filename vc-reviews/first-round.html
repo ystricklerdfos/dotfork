@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Round Capital Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">First Round Capital</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Sick Nylvester | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://firstround.com" target="_blank">firstround.com</a>
+            </div>
+            <div class="rating">4.2</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> First Round Capital</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://firstround.com" target="_blank">firstround.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 2004</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $3B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>First Round Capital's homepage loads a bloated 3.2MB JavaScript bundle before showing you a single pixel of content, which is peak irony for a firm that probably lectures portfolio companies about "technical debt" and "lean MVP development." Their Next.js implementation is hobbled together like a bootcamp graduate's final project - I'm talking server-side rendering that somehow still has a 4.7-second LCP on mobile. The hero section's custom animation framework (stored in `/assets/js/fancy-circles-v2.min.js` - yes, version 2) crashes Safari 15 harder than a SaaS startup without product-market fit. Meanwhile, their CSS Grid implementation looks like someone copy-pasted Stack Overflow answers without understanding flexbox fundamentals, resulting in layout shifts that would make a Core Web Vitals audit weep.</p>
+
+            <p>Remember when Josh Kopelman used to preach about "capital efficiency" at conferences? Well, someone should tell his web team about resource efficiency. Their DNS setup routes through five different CDNs (Cloudflare → AWS CloudFront → some mystery endpoint that times out 20% of the time), creating a waterfall chart that looks like my friend Derek's term sheet negotiations - overly complicated and ultimately disappointing. The site loads 23 third-party tracking scripts, including HubSpot, Segment, Google Analytics, Hotjar, and what appears to be a custom behavioral analytics tool that's probably violating GDPR in seventeen different ways. For a firm that invested in privacy-focused startups, this is like watching a vegan influencer eat a cheeseburger.</p>
+
+            <p>The technical architecture screams "expensive agency build from 2019 that nobody wants to touch." Their component library uses BEM naming conventions inconsistently (`.fr-hero__title` sitting next to `.heroTitleLarge` in the same damn file), and their API endpoints are exposed via unminified GraphQL queries that leak internal field names like `internal_partner_priority_score`. The mobile experience is an accessibility nightmare - no ARIA labels, heading hierarchy that jumps from H1 to H4, and form inputs that don't announce themselves to screen readers. It's the kind of sloppy implementation that would get a portfolio company's CTO fired, yet here it sits, representing $3 billion in assets under management.</p>
+
+            <p>Derek Martinez, who pitched First Round in 2022, told me they spent three hours grilling him about his technical architecture while their own contact form was broken (returns a 500 error when you include special characters in the message field - still not fixed as of last week). The "Portfolio" section uses infinite scroll implemented so poorly that browser back buttons break, trapping users in a UX purgatory that mirrors the venture funding process itself. Their blog's RSS feed hasn't worked since 2021, and their sitemap.xml returns a 404, which explains why their "insights" content has the SEO visibility of a stealth-mode startup. This is what happens when you prioritize brand aesthetics over basic web functionality - you get a beautiful disaster that loads slower than a Series A negotiation.</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A $3B venture capital firm serving broken forms and accessibility violations to founders while demanding "technical excellence" from their portfolio companies.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

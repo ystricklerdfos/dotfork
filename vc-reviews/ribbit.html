@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ribbit Capital Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo-container">
+            <a href="../index.html"><img src="../images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="../index.html">DOTFORK</a></div>
+        </div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../vc-archive.html">VC Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">Ribbit Capital</h1>
+            <div class="review-meta">
+                Venture Capital | Reviewed by Sara Kwisher | January 12, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://ribbitcap.com" target="_blank">ribbitcap.com</a>
+            </div>
+            <div class="rating">4.5</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">Firm Information</div>
+            <div class="info-box-row"><span class="info-box-label">Name:</span> Ribbit Capital</div>
+            <div class="info-box-row"><span class="info-box-label">URL:</span> <a href="https://ribbitcap.com" target="_blank">ribbitcap.com</a></div>
+            <div class="info-box-row"><span class="info-box-label">Founded:</span> 2012</div>
+            <div class="info-box-row"><span class="info-box-label">AUM:</span> $6B+</div>
+            <div class="info-box-row"><span class="info-box-label">Type:</span> Venture Capital</div>
+        </div>
+
+        <div class="review-body">
+            <p>"Frictionless financial services for everyone" screams the hero text on Ribbit Capital's homepage, but apparently that philosophy doesn't extend to their own web development. After spending ten minutes wrestling with their janky Next.js implementation, I'm wondering if they've ever heard of actual friction testing. The site loads a bloated 3.2MB of JavaScript for what amounts to a glorified brochure, complete with stuttering animations that make my MacBook Pro sound like it's mining Bitcoin. Their main bundle includes three different versions of React components because someone clearly never heard of tree-shaking, and the CSS-in-JS implementation is so poorly optimized that their Lighthouse performance score probably hovers around a tragic 31. For a firm that's invested in countless fintech startups, you'd think they'd understand that loading 847KB of hero video on mobile defeats the purpose of "frictionless" anything.</p>
+
+            <p>The technical archaeology gets worse once you peek under the hood. Their component structure reads like a junior developer's fever dream – `.hero-section-wrapper-container-div` nested six levels deep, because apparently semantic HTML is just a suggestion. The routing implementation breaks the back button half the time, and their image optimization is so bad they're serving 4K headshots compressed to JPEG artifacts that would make a 2003 digital camera weep. Most damning: their TypeScript configuration is stricter than their portfolio screening process, yet somehow they still managed to ship with `any` types scattered throughout their contact forms. The GitHub commits (visible through exposed source maps) show a revolving door of contractors with commit messages like "fix thing" and "website stuff final FINAL v3."</p>
+
+            <p>Performance-wise, this site commits crimes against bandwidth that should trigger SEC investigations. First Contentful Paint clocks in at a leisurely 4.2 seconds on desktop, while mobile users get treated to 8+ seconds of white screen meditation before anything renders. They're loading the entire Framer Motion library to animate three buttons, pulling in Segment, Google Analytics, HubSpot tracking, Hotjar heatmaps, and something called `ribbit-internal-analytics.js` that's probably just console.log statements someone forgot to remove. The real kicker? Their "cutting-edge fintech investment philosophy" page loads 127KB of web fonts (including two weights of the same typeface) while serving inconsistent letter-spacing that makes their carefully crafted investment theses look like ransom notes.</p>
+
+            <p>Here's where the irony reaches peak venture capital absurdity: Ribbit manages over $6 billion in assets and preaches digital transformation to every startup that walks through their doors, yet their own digital presence feels like it was assembled by committee in 2019 and left to rot. The portfolio page uses a virtualized list component that breaks keyboard navigation, their team photos are inconsistently cropped (seriously, some are 400x400, others are 800x600 stretched to fit), and their careers page returns a 404 half the time because someone hardcoded production URLs in their staging environment. Most telling is their footer's "Built with ❤️ by [AGENCY_NAME]" placeholder text that they apparently forgot to customize – nothing says "attention to detail" like shipping template copy on your billion-dollar fund's homepage.</p>
+
+            <p>The contact form deserves its own war crimes tribunal. Built with what appears to be a Frankenstein's monster of React Hook Form and custom validation, it manages to be both overly complex and completely broken. Submit an inquiry and you'll get a network error, a success message, and two confirmation emails – sometimes. The form validation thinks "meyer@ribbitcap.com" is an invalid email format, but happily accepts "asdf@" as legitimate. Their API endpoints are exposed in the client bundle (rookie mistake), revealing they're running a cobbled-together Express server that probably hasn't been updated since the Obama administration. For a firm that's supposed to identify and nurture the next generation of tech unicorns, their own technical execution suggests they'd struggle to get past a basic code review at the very startups they're funding.</p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> A $6B fund that can't optimize their own website bundle size has no business lecturing portfolio companies about operational excellence.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>
