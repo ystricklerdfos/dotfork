@@ -87,6 +87,13 @@
             </div>
         </div>
 
+        <!-- Most Recent Reviews Section -->
+        <h1>Most Recent Reviews</h1>
+        <p style="margin-bottom: 20px; color: #666; font-size: 13px;">The latest reviews from our staff and community.</p>
+        <div id="recentReviewsList">
+            <p style="color: #999; font-style: italic;">Loading recent reviews...</p>
+        </div>
+
         <!-- Highest Rated Section -->
         <h1>Highest Rated</h1>
         <p style="margin-bottom: 20px; color: #666; font-size: 13px;">The four highest-rated sites across all categories.</p>
@@ -1609,7 +1616,76 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Load most recent reviews
+    loadRecentReviews();
 });
+
+// Static recent reviews (staff reviews)
+const staticRecentReviews = [
+    { title: 'Metalabel', url: 'reviews/metalabel.html', category: 'Creator Economy', rating: '0.0', reviewer: 'Rimon Seynolds', date: 'January 12, 2026' },
+    { title: 'Artist Corporations', url: 'reviews/artist-corporations.html', category: 'Creator Economy', rating: '6.1', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'Kickstarter', url: 'reviews/kickstarter.html', category: 'Creator Economy', rating: '6.3', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'The Creative Independent', url: 'reviews/the-creative-independent.html', category: 'Creator Economy', rating: '8.6', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'Are.na', url: 'reviews/are-na.html', category: 'Creator Economy', rating: '8.5', reviewer: 'Wann Jenner', date: 'January 12, 2026' }
+];
+
+async function loadRecentReviews() {
+    const container = document.getElementById('recentReviewsList');
+    if (!container) return;
+
+    let allReviews = [...staticRecentReviews];
+
+    // Try to load community reviews
+    try {
+        const response = await fetch('/api/community-reviews');
+        const data = await response.json();
+        const communityReviews = (data.reviews || []).map(r => ({
+            title: r.name,
+            url: '#',
+            category: r.category || 'Community',
+            rating: r.rating,
+            reviewer: r.reviewer,
+            date: new Date(r.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+            isCommunity: true,
+            reviewId: r.id
+        }));
+        allReviews = [...communityReviews, ...allReviews];
+    } catch (error) {
+        console.log('Could not load community reviews');
+    }
+
+    // Sort by date (most recent first) and take top 6
+    const recentReviews = allReviews.slice(0, 6);
+
+    if (recentReviews.length === 0) {
+        container.innerHTML = '<p style="color: #999;">No recent reviews found.</p>';
+        return;
+    }
+
+    let html = '';
+    recentReviews.forEach(review => {
+        const badge = review.isCommunity ? '<span class="community-badge" style="background: #4a90d9; color: white; padding: 2px 8px; font-size: 10px; margin-left: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Community</span>' : '';
+        const ratingClass = parseFloat(review.rating) >= 8.5 ? 'rating-small' : 'rating-small';
+        const onclick = review.isCommunity ? `onclick="viewCommunityReview('${review.reviewId}')" style="cursor: pointer;"` : '';
+        const href = review.isCommunity ? '#' : review.url;
+
+        html += `
+        <div class="review-listing">
+            <h2><a href="${href}" ${onclick}>${review.title}</a>${badge}</h2>
+            <div class="review-meta">
+                ${review.category} | Reviewed by ${review.reviewer} | ${review.date}
+                <span class="${ratingClass}">${review.rating}</span>
+            </div>
+        </div>`;
+    });
+
+    container.innerHTML = html;
+}
+
+function viewCommunityReview(reviewId) {
+    window.location.href = 'community.html?view=' + reviewId;
+}
 </script>
 
 </body>

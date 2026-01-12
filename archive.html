@@ -51,7 +51,8 @@
         <div class="category-filter">
             <div class="category-filter-label">Filter by Category</div>
             <div class="category-buttons">
-                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn active" data-category="recent">Most Recent</button>
+                <button class="category-btn" data-category="all">All</button>
                 <button class="category-btn" data-category="ai-platform">AI Platform</button>
                 <button class="category-btn" data-category="analytics">Analytics</button>
                 <button class="category-btn" data-category="crm">CRM</button>
@@ -73,7 +74,16 @@
             </div>
         </div>
 
-        <div class="category-section" data-category="ai-platform">
+        <!-- Most Recent Section -->
+        <div class="category-section" data-category="recent">
+        <h3>Most Recent Reviews</h3>
+        <p style="color: #666; margin-bottom: 20px; font-size: 13px;">The latest reviews from our staff and community, sorted by date.</p>
+        <div id="mostRecentList" style="margin-bottom: 40px;">
+            <p style="color: #999; font-style: italic;">Loading recent reviews...</p>
+        </div>
+        </div>
+
+        <div class="category-section hidden" data-category="ai-platform">
         <h3>AI Platform</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -160,7 +170,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="analytics">
+        <div class="category-section hidden" data-category="analytics">
         <h3>Analytics</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -184,7 +194,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="crm">
+        <div class="category-section hidden" data-category="crm">
         <h3>CRM</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -208,7 +218,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="collaboration">
+        <div class="category-section hidden" data-category="collaboration">
         <h3>Collaboration</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -223,7 +233,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="communication">
+        <div class="category-section hidden" data-category="communication">
         <h3>Communication</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -283,7 +293,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="creator-economy">
+        <div class="category-section hidden" data-category="creator-economy">
         <h3>Creator Economy</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -469,7 +479,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="database">
+        <div class="category-section hidden" data-category="database">
         <h3>Database</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -511,7 +521,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="design-tools">
+        <div class="category-section hidden" data-category="design-tools">
         <h3>Design Tools</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -589,7 +599,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="developer-tools">
+        <div class="category-section hidden" data-category="developer-tools">
         <h3>Developer Tools</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -685,7 +695,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="e-commerce">
+        <div class="category-section hidden" data-category="e-commerce">
         <h3>E-commerce</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -709,7 +719,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="enterprise">
+        <div class="category-section hidden" data-category="enterprise">
         <h3>Enterprise</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -769,7 +779,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="marketing">
+        <div class="category-section hidden" data-category="marketing">
         <h3>Marketing</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -793,7 +803,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="payments">
+        <div class="category-section hidden" data-category="payments">
         <h3>Payments</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -808,7 +818,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="productivity">
+        <div class="category-section hidden" data-category="productivity">
         <h3>Productivity</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -940,7 +950,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="project-management">
+        <div class="category-section hidden" data-category="project-management">
         <h3>Project Management</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -982,7 +992,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="classics">
+        <div class="category-section hidden" data-category="classics">
         <h3>Web Classics</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -1069,7 +1079,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="venture-capital">
+        <div class="category-section hidden" data-category="venture-capital">
         <h3>Venture Capital</h3>
         <div style="margin-bottom: 40px;">
             <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
@@ -1345,7 +1355,7 @@
         </div>
         </div>
 
-        <div class="category-section" data-category="community">
+        <div class="category-section hidden" data-category="community">
         <h3>Community Reviews</h3>
         <p style="margin-bottom: 20px; color: #666; font-size: 13px;">
             User-generated reviews submitted by the DOTFORK community.
@@ -1385,9 +1395,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Show/hide sections
             sections.forEach(section => {
+                const sectionCategory = section.getAttribute('data-category');
                 if (category === 'all') {
-                    section.classList.remove('hidden');
-                } else if (section.getAttribute('data-category') === category) {
+                    // Show all except the recent section
+                    if (sectionCategory === 'recent') {
+                        section.classList.add('hidden');
+                    } else {
+                        section.classList.remove('hidden');
+                    }
+                } else if (sectionCategory === category) {
                     section.classList.remove('hidden');
                 } else {
                     section.classList.add('hidden');
@@ -1398,6 +1414,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load community reviews
     loadCommunityReviews();
+
+    // Load most recent reviews
+    loadMostRecentReviews();
 });
 
 async function loadCommunityReviews() {
@@ -1485,6 +1504,76 @@ function viewCommunityReview(reviewId) {
                 if (e.target === modal) modal.remove();
             });
         });
+}
+
+// Static recent staff reviews
+const staticRecentReviews = [
+    { title: 'Metalabel', url: 'reviews/metalabel.html', category: 'Creator Economy', rating: '0.0', reviewer: 'Rimon Seynolds', date: 'January 12, 2026' },
+    { title: 'Artist Corporations', url: 'reviews/artist-corporations.html', category: 'Creator Economy', rating: '6.1', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'Kickstarter', url: 'reviews/kickstarter.html', category: 'Creator Economy', rating: '6.3', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'The Creative Independent', url: 'reviews/the-creative-independent.html', category: 'Creator Economy', rating: '8.6', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'Are.na', url: 'reviews/are-na.html', category: 'Creator Economy', rating: '8.5', reviewer: 'Wann Jenner', date: 'January 12, 2026' },
+    { title: 'Craigslist', url: 'reviews/craigslist.html', category: 'Web Classics', rating: '10.0', reviewer: 'Malt Wossberg', date: 'January 12, 2026' },
+    { title: 'Wikipedia', url: 'reviews/wikipedia.html', category: 'Reference', rating: '9.2', reviewer: 'Sara Kwisher', date: 'January 12, 2026' },
+    { title: 'Tumblr', url: 'reviews/tumblr.html', category: 'Web Classics', rating: '8.4', reviewer: 'Hessica Jopper', date: 'January 12, 2026' },
+    { title: 'Glassdoor', url: 'reviews/glassdoor.html', category: 'Web Classics', rating: '7.3', reviewer: 'Sara Kwisher', date: 'January 12, 2026' },
+    { title: 'Stripe', url: 'reviews/stripe.html', category: 'Payments', rating: '8.2', reviewer: 'Ciana Dastellano', date: 'January 12, 2026' }
+];
+
+async function loadMostRecentReviews() {
+    const container = document.getElementById('mostRecentList');
+    if (!container) return;
+
+    let allReviews = [...staticRecentReviews];
+
+    // Try to load community reviews
+    try {
+        const response = await fetch('/api/community-reviews');
+        const data = await response.json();
+        const communityReviews = (data.reviews || []).map(r => ({
+            title: r.site?.name || r.name || 'Unknown',
+            url: '#',
+            category: r.category || 'Community',
+            rating: r.rating?.toFixed(1) || '0.0',
+            reviewer: r.reviewer || 'Anonymous',
+            date: new Date(r.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+            isCommunity: true,
+            reviewId: r.id
+        }));
+        // Put community reviews at the start (most recent)
+        allReviews = [...communityReviews, ...allReviews];
+    } catch (error) {
+        console.log('Could not load community reviews');
+    }
+
+    // Show up to 15 most recent
+    const recentReviews = allReviews.slice(0, 15);
+
+    if (recentReviews.length === 0) {
+        container.innerHTML = '<p style="color: #999;">No recent reviews found.</p>';
+        return;
+    }
+
+    let html = '';
+    recentReviews.forEach(review => {
+        const communityBadge = review.isCommunity ? '<span style="background: #4a90d9; color: white; font-size: 9px; padding: 2px 6px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Community</span>' : '';
+        const bnwBadge = parseFloat(review.rating) >= 8.5 ? ' <span class="bnw-badge">Best New Website</span>' : '';
+        const onclick = review.isCommunity ? `onclick="viewCommunityReview('${review.reviewId}')"` : '';
+        const href = review.isCommunity ? 'javascript:void(0)' : review.url;
+
+        html += `
+        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+            <div style="margin-bottom: 8px;">
+                <a href="${href}" ${onclick} style="font-size: 18px; font-weight: 700;">${review.title}</a>
+                <span class="rating-small">${review.rating}</span>${bnwBadge}${communityBadge}
+            </div>
+            <div style="font-size: 12px; color: #999;">
+                ${review.category} | Reviewed by ${review.reviewer} | ${review.date}
+            </div>
+        </div>`;
+    });
+
+    container.innerHTML = html;
 }
 </script>
 
