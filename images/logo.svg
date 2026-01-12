@@ -1,0 +1,14 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circle border -->
+  <circle cx="40" cy="40" r="38" stroke="#ff3530" stroke-width="4" fill="none"/>
+
+  <!-- Three hockey stick growth lines inside the circle -->
+  <!-- Left line - starts flat, curves up -->
+  <path d="M 18 52 L 28 52 Q 32 52 34 48 L 42 28" stroke="#ff3530" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Middle line - starts flat, curves up (slightly higher) -->
+  <path d="M 28 56 L 38 56 Q 42 56 44 52 L 52 32" stroke="#ff3530" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Right line - starts flat, curves up (highest) -->
+  <path d="M 38 60 L 48 60 Q 52 60 54 56 L 62 36" stroke="#ff3530" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg>

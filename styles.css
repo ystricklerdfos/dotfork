@@ -1,4 +1,4 @@
-/* DOTFORK - 2014 Pitchfork Aesthetic */
+/* DOTFORK - Editorial Style */
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -10,48 +10,64 @@ body {
     line-height: 1.5;
 }
 
-/* Header Styles */
+/* Header Styles - EDITORIAL */
 .header {
     background-color: #ffffff;
     color: #000000;
-    padding: 25px 20px 20px 20px;
-    border-bottom: 1px solid #000000;
+    padding: 50px 20px 30px 20px;
+    border-bottom: 3px solid #000000;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 12px;
+}
+
+.logo-icon {
+    width: 70px;
+    height: 70px;
 }
 
 .logo {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 42px;
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -2px;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
 }
 
 .tagline {
-    font-size: 11px;
-    color: #999999;
-    margin: 8px 0 0 0;
-    font-style: normal;
+    font-size: 13px;
+    color: #666666;
+    margin: 15px 0 0 0;
+    font-style: italic;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-/* Navigation */
+/* Navigation - EDITORIAL */
 .nav {
     background-color: #ffffff;
-    padding: 15px 20px;
+    padding: 20px;
     border-bottom: 1px solid #e5e5e5;
+    text-align: center;
 }
 
 .nav a {
     color: #000000;
     text-decoration: none;
-    margin-right: 25px;
-    font-weight: 400;
-    font-size: 13px;
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
 }
 
 .nav a:hover {
@@ -60,24 +76,24 @@ body {
 
 /* Main Content */
 .container {
-    padding: 30px 20px;
-    max-width: 640px;
+    padding: 40px 20px;
+    max-width: 700px;
     background-color: #ffffff;
-    margin: 0;
+    margin: 0 auto;
 }
 
 /* Review Listing Styles */
 .review-listing {
     border-bottom: 1px solid #e5e5e5;
-    padding: 25px 0;
+    padding: 30px 0;
     margin-bottom: 0;
 }
 
 .review-listing h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
     letter-spacing: -0.5px;
 }
 
@@ -91,7 +107,7 @@ body {
 }
 
 .review-meta {
-    font-size: 12px;
+    font-size: 11px;
     color: #999999;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -99,9 +115,10 @@ body {
 }
 
 .review-excerpt {
-    margin: 12px 0;
-    line-height: 1.6;
+    margin: 15px 0;
+    line-height: 1.7;
     color: #333333;
+    font-size: 15px;
 }
 
 /* Rating Box */
@@ -109,9 +126,9 @@ body {
     background-color: #ff3530;
     color: #ffffff;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    padding: 12px 18px;
+    padding: 14px 20px;
     display: inline-block;
     margin: 15px 0;
     border-radius: 0;
@@ -142,16 +159,25 @@ body {
     border-radius: 0;
 }
 
-/* Section Headers */
+/* Section Headers - EDITORIAL */
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 28px;
-    margin: 40px 0 25px 0;
-    border-bottom: 1px solid #000000;
-    padding-bottom: 12px;
+    font-size: 14px;
+    margin: 50px 0 30px 0;
+    border-bottom: none;
+    padding-bottom: 0;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0;
+    letter-spacing: 3px;
+    color: #ff3530;
+}
+
+h1:first-of-type {
+    margin-top: 0;
+}
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h3 {
@@ -166,23 +192,23 @@ h3 {
 /* Review Page Styles */
 .review-header {
     border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .review-title {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 48px;
-    margin: 0 0 12px 0;
+    font-size: 54px;
+    margin: 0 0 15px 0;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
     line-height: 1.1;
 }
 
 .review-url {
     color: #999999;
     font-size: 12px;
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .review-url a {
@@ -191,34 +217,38 @@ h3 {
 }
 
 .review-body {
-    line-height: 1.7;
-    margin: 25px 0;
-    font-size: 16px;
+    line-height: 1.8;
+    margin: 30px 0;
+    font-size: 17px;
 }
 
 .review-body p {
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
 }
 
 .verdict-box {
     background-color: #f5f5f5;
-    border-left: 3px solid #ff3530;
-    padding: 20px;
-    margin: 30px 0;
+    border-left: 4px solid #ff3530;
+    padding: 25px;
+    margin: 40px 0;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 /* Footer */
 .footer {
-    background-color: #f5f5f5;
-    border-top: 1px solid #e5e5e5;
-    padding: 20px;
-    margin-top: 50px;
+    background-color: #000000;
+    color: #666666;
+    border-top: none;
+    padding: 30px 20px;
+    margin-top: 60px;
     font-size: 11px;
-    color: #999999;
     text-align: center;
+}
+
+.footer a {
+    color: #999999;
 }
 
 /* Links */
@@ -236,38 +266,47 @@ a:visited {
     color: #000000;
 }
 
-/* Table Layouts (1999 style) */
+/* Table Layouts */
 table {
     width: 100%;
     border: 0;
-    cellspacing: 0;
-    cellpadding: 0;
 }
 
 /* About Page Styles */
 .bio {
-    margin-bottom: 35px;
-    padding-bottom: 25px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
     border-bottom: 1px solid #e5e5e5;
 }
 
 .bio-name {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .bio-title {
     font-size: 12px;
     color: #999999;
     font-style: normal;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .bio-text {
-    line-height: 1.6;
-    font-size: 14px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Editorial pull quote style */
+.pull-quote {
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    border-left: 4px solid #ff3530;
+    padding-left: 20px;
+    margin: 30px 0;
+    color: #333;
 }
