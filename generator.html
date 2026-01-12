@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Review Generator - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo">DOTFORK</div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Reviews</a>
+        <a href="generator.html">Generator</a>
+        <a href="about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <h1>Review Generator</h1>
+
+        <div style="background-color: #f5f5f5; padding: 25px; margin: 30px 0;">
+            <p style="margin: 0 0 20px 0; font-size: 14px;">
+                Enter a website URL and our staff will actually visit the site and generate a brutally honest review using AI analysis.
+            </p>
+            <p id="statusMessage" style="margin: 0 0 20px 0; font-size: 13px; color: #ff3530; display: none;">
+                Analyzing website... This may take 10-20 seconds.
+            </p>
+
+            <form id="reviewForm" style="margin-bottom: 0;">
+                <div style="margin-bottom: 15px;">
+                    <label for="websiteUrl" style="display: block; margin-bottom: 8px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Website URL</label>
+                    <input type="text" id="websiteUrl" name="websiteUrl" placeholder="https://example.com"
+                           style="width: 100%; padding: 12px; font-size: 14px; border: 1px solid #e5e5e5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="websiteName" style="display: block; margin-bottom: 8px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Website Name (Optional)</label>
+                    <input type="text" id="websiteName" name="websiteName" placeholder="e.g., Slack, Discord, etc."
+                           style="width: 100%; padding: 12px; font-size: 14px; border: 1px solid #e5e5e5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="reviewerSelect" style="display: block; margin-bottom: 8px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Reviewer</label>
+                    <select id="reviewerSelect" name="reviewerSelect"
+                            style="width: 100%; padding: 12px; font-size: 14px; border: 1px solid #e5e5e5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; background-color: white;">
+                        <option value="">Random (Surprise Me)</option>
+                        <option value="Marcus Thorne">Marcus Thorne (Precise/Technical)</option>
+                        <option value="Diana Castellano">Diana Castellano (Philosophical)</option>
+                        <option value="Jamie Kowalski">Jamie Kowalski (Brooklyn Neurotic)</option>
+                        <option value="Sam Chen">Sam Chen (Ruthless)</option>
+                        <option value="Alex Reeves">Alex Reeves (Gonzo)</option>
+                        <option value="Ben Thompson">Ben Thompson (Strategic)</option>
+                        <option value="Jia Tolentino">Jia Tolentino (Cultural Critic)</option>
+                        <option value="Kara Swisher">Kara Swisher (No-Bullshit)</option>
+                        <option value="David Foster Wallace">David Foster Wallace (Maximalist)</option>
+                        <option value="Lester Bangs">Lester Bangs (Raw & Manic)</option>
+                        <option value="Richard Meltzer">Richard Meltzer (Absurdist)</option>
+                        <option value="Nick Sylvester">Nick Sylvester (Personal/Tangential)</option>
+                        <option value="Brent DiCrescenzo">Brent DiCrescenzo (Metaphorical)</option>
+                        <option value="Ryan Schreiber">Ryan Schreiber (Authoritative)</option>
+                        <option value="Mark Richardson">Mark Richardson (Contextual)</option>
+                        <option value="Ryan Dombal">Ryan Dombal (Conversational)</option>
+                        <option value="Jessica Hopper">Jessica Hopper (Feminist/Punk)</option>
+                        <option value="Simon Reynolds">Simon Reynolds (Theoretical)</option>
+                        <option value="Ann Powers">Ann Powers (Empathetic)</option>
+                        <option value="Greil Marcus">Greil Marcus (American Studies)</option>
+                        <option value="Robert Christgau">Robert Christgau (Consumer Guide)</option>
+                        <option value="Ellen Willis">Ellen Willis (Feminist/Political)</option>
+                        <option value="Phoebe Bridgers">Phoebe Bridgers (Sad Girl Indie)</option>
+                        <option value="Frank Ocean">Frank Ocean (Luxury Minimalism)</option>
+                        <option value="Ezra Koenig">Ezra Koenig (Prep School Intellectual)</option>
+                        <option value="Questlove">Questlove (Encyclopedic)</option>
+                        <option value="Kim Gordon">Kim Gordon (Art Scene/Cool)</option>
+                        <option value="Thurston Moore">Thurston Moore (Avant-Garde)</option>
+                        <option value="Carrie Brownstein">Carrie Brownstein (Sardonic/PNW)</option>
+                        <option value="St. Vincent">St. Vincent (Art Pop/Dark)</option>
+                    </select>
+                </div>
+
+                <button type="submit" style="background-color: #ff3530; color: #ffffff; padding: 12px 30px; font-size: 14px; font-weight: 700; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                    Generate Review
+                </button>
+            </form>
+        </div>
+
+        <div id="reviewOutput" style="display: none; margin-top: 40px;">
+            <div class="review-header">
+                <h1 class="review-title" id="outputTitle" style="margin: 0 0 12px 0;"></h1>
+                <div class="review-meta" id="outputMeta"></div>
+                <div class="review-url">
+                    <a id="outputUrl" href="#" target="_blank"></a>
+                </div>
+                <div class="rating" id="outputRating"></div>
+                <span id="outputBadge"></span>
+            </div>
+
+            <div id="outputInfoBox"></div>
+
+            <div class="review-body" id="outputBody"></div>
+
+            <div class="verdict-box" id="outputVerdict"></div>
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 11, 2026
+    </td>
+</tr>
+</table>
+
+<script src="generator-ai.js"></script>
+
+</body>
+</html>

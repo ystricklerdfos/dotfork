@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Neon Review - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo">DOTFORK</div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Reviews</a>
+        <a href="../generator.html">Generator</a>
+        <a href="../about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <div class="review-header">
+            <h1 class="review-title">Neon</h1>
+            <div class="review-meta">
+                Database | Reviewed by Ben Thompson | January 11, 2026
+            </div>
+            <div class="review-url">
+                <a href="https://neon.tech" target="_blank">neon.tech</a>
+            </div>
+            <div class="rating">6.1</div>
+        </div>
+
+        <div class="review-body">
+            <p>
+            Neon's positioning as "serverless Postgres" reveals everything about where database infrastructure sits in 2024's venture capital food chain. This isn't really about databases—it's about AWS margin compression anxiety dressed up as developer experience innovation. The company's betting that enough engineering teams will pay premium pricing to avoid thinking about database operations, which is probably correct but depressing in that particular late-stage capitalism way. Their homepage copy reads like someone fed "developer pain points" and "cloud economics buzzwords" into a content optimization algorithm, complete with the mandatory "trusted by thousands of teams" social proof that could mean literally anything from three-person startups to enterprise pilots that got cancelled after the first billing cycle.
+            </p>
+
+            <p>
+            The technical differentiation here centers on branching—essentially Git for your database state, which solves a real problem if you've ever tried to coordinate schema migrations across multiple environments. Copy-on-write storage is genuinely clever engineering, and the instant provisioning promise addresses the legitimate frustration of waiting around for RDS instances to spin up during development. But the serverless framing feels intellectually dishonest when you're still fundamentally running Postgres under the hood. This isn't Lambda-style compute that disappears between requests; it's aggressive auto-scaling with better marketing copy. The scale-to-zero economics only work if your application traffic patterns align perfectly with their cost model assumptions, which is a bigger "if" than their landing page suggests.
+            </p>
+
+            <p>
+            What's fascinating from a competitive moat perspective is how Neon's simultaneously competing with hyperscale cloud providers and traditional database-as-a-service vendors while trying to carve out this middle ground of "Postgres but easier." The read replica functionality and point-in-time recovery features are table stakes for any serious database service in 2024, not differentiators. Their HNSW vector search integration feels like a transparent attempt to ride the AI hype wave, because apparently every database company now needs an AI story to justify their Series B valuation. The real question is whether they can build enough operational complexity advantages to justify the inevitable cost premium over just running managed Postgres on your preferred cloud provider.
+            </p>
+
+            <p>
+            The developer experience positioning is probably their strongest angle, but the website's emphasis on API-driven database operations and CLI tooling reveals an interesting tension. They're selling to developers who want database complexity abstracted away while simultaneously marketing advanced operational capabilities that require significant infrastructure sophistication to use effectively. The "integrate within minutes" promise sits awkwardly next to features like programmatic management of thousands of databases—these are different customer personas with different budget authorities and different definitions of success. It's the classic infrastructure startup challenge of trying to appeal to both individual developers who want simplicity and platform teams who need enterprise-grade operational control.
+            </p>
+
+            <p>
+            Ultimately, Neon represents the broader trend of infrastructure companies trying to capture value by inserting themselves between developers and hyperscale cloud providers, which is a viable strategy until it isn't. Their branching functionality is genuinely useful, and the serverless positioning will resonate with teams already committed to that architectural philosophy. But the fundamental economics still depend on whether their operational efficiencies can overcome the inherent cost disadvantage of being a layer on top of existing cloud infrastructure. The vector search integration and enterprise API features suggest they're hedging their bets across multiple potential market directions, which is either smart positioning or a lack of conviction about their core value proposition.
+            </p>
+        </div>
+
+        <div class="verdict-box">
+            <strong>VERDICT:</strong> Competent infrastructure middleman selling developer convenience at enterprise prices while hoping AWS doesn't wake up and build the same features.
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 11, 2026
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

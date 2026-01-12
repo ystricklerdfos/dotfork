@@ -1,0 +1,22 @@
+{
+  "name": "dotfork",
+  "version": "1.0.0",
+  "description": "A 1999 Pitchfork-style review site for modern dot-com websites.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "undici": "^6.20.1"
+  }
+}

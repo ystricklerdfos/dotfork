@@ -1,0 +1,2 @@
+[dotenv@17.2.3] injecting env (0) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+Error: ANTHROPIC_API_KEY not found in .env file
