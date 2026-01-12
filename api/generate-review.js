@@ -134,7 +134,7 @@ REVIEW_END
 VERDICT: [one cynical sentence]`;
 
         const message = await anthropic.messages.create({
-            model: 'claude-sonnet-4-20250514',
+            model: 'claude-sonnet-4-5-20250929',
             max_tokens: 2500,
             messages: [{ role: 'user', content: prompt }]
         });
@@ -179,9 +179,11 @@ VERDICT: [one cynical sentence]`;
 
     } catch (error) {
         console.error('Error generating review:', error);
+        console.error('Full error details:', JSON.stringify(error, null, 2));
         res.status(500).json({
             error: 'Failed to generate review',
-            message: error.message
+            message: error.message,
+            details: error.toString()
         });
     }
 }
