@@ -1,9 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>Venture Deals - DOTFORK</title>
+    <title>VC Deal Reviews - DOTFORK</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -11,7 +12,10 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
     <td class="header">
-        <div class="logo">DOTFORK</div>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.svg" alt="DOTFORK" class="logo-icon"></a>
+            <div class="logo"><a href="index.html">DOTFORK</a></div>
+        </div>
         <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
     </td>
 </tr>
@@ -25,7 +29,6 @@
         <a href="archive.html">Reviews</a>
         <a href="deals.html">Deals</a>
         <a href="generator.html">Generator</a>
-        <a href="my-reviews.html">My Reviews</a>
         <a href="about.html">About</a>
     </td>
 </tr>
@@ -36,127 +39,324 @@
 <tr>
     <td class="container">
 
-        <h1>Venture Deals</h1>
-
-        <p style="font-size: 13px; color: #666; margin-bottom: 30px; line-height: 1.6;">
-            We review funding rounds like album releases. The investors are the features, the valuation is the production value, and the terms are the tracklist. Some rounds are classic debuts. Others are disappointing sophomore efforts. A few are career-defining masterpieces.
+        <h1>VC Deal Reviews</h1>
+        <p style="margin-bottom: 30px; color: #666;">
+            30 brutally honest reviews of notable venture capital deals. Sorted by rating.
         </p>
 
-        <!-- Best New Deals -->
-        <h2 style="border-bottom: 2px solid #ff3530; padding-bottom: 8px; margin-top: 40px;">Best New Deals</h2>
-
-        <div class="review-listing">
-            <h2><a href="deals/deal-figma.html">Figma</a></h2>
-            <div class="review-meta">
-                Acquisition (Failed) • $20B @ $20B (attempted) | Lead: Adobe | September 2023
-                <span class="rating-small">8.4</span>
-                <span class="bnw-badge">Best New Deal</span>
-            </div>
-            <div class="review-excerpt">
-                Adobe tried to buy Figma for $20B. Regulators said no. Figma walked away with $1B termination fee. Now worth more than the original offer. A triumph of regulatory intervention.
-            </div>
-        </div>
-
-        <div class="review-listing">
-            <h2><a href="deals/deal-wiz.html">Wiz</a></h2>
-            <div class="review-meta">
-                Rejected Acquisition • $23B @ $23B (rejected) | Lead: Google | July 2024
-                <span class="rating-small">8.1</span>
-                <span class="bnw-badge">Best New Deal</span>
-            </div>
-            <div class="review-excerpt">
-                Cloud security startup said NO to $23B from Google. Fastest to $100M ARR ever. Going for IPO instead. Israeli founders with audacity. The deal that wasn't.
+        <!-- Sector Filter -->
+        <div class="category-filter">
+            <div class="category-filter-label">Filter by Sector</div>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="ai">AI</button>
+                <button class="category-btn" data-category="fintech">Fintech</button>
+                <button class="category-btn" data-category="enterprise">Enterprise</button>
+                <button class="category-btn" data-category="design">Design</button>
+                <button class="category-btn" data-category="security">Security</button>
+                <button class="category-btn" data-category="other">Other</button>
             </div>
         </div>
 
-        <!-- Recent Deal Reviews -->
-        <h2 style="border-bottom: 2px solid #000; padding-bottom: 8px; margin-top: 40px;">Recent Deal Reviews</h2>
+        <div style="margin-bottom: 40px;">
+            <!-- Plaid Series D - 7.4 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/plaid.html" style="font-size: 18px; font-weight: 700;">Plaid Series D</a>
+                    <span class="rating-small">7.4</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$425M at $13.4B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Wavid Foster Dallace</div>
+            </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-anthropic.html">Anthropic Series D</a></h2>
-            <div class="review-meta">
-                Series D • $4B @ $18B | Lead: Menlo Ventures, Various | December 2024
-                <span class="rating-small">7.8</span>
+            <!-- Instacart Series I - 7.1 -->
+            <div class="deal-item" data-sector="other" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/instacart.html" style="font-size: 18px; font-weight: 700;">Instacart Series I</a>
+                    <span class="rating-small">7.1</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$265M at $39B valuation</div>
+                <div style="font-size: 12px; color: #999;">E-commerce | Reviewed by Wavid Foster Dallace</div>
             </div>
-            <div class="review-excerpt">
-                The "responsible AI" play. Taking money from everyone - Amazon, Google, Spark. Founded by ex-OpenAI researchers. Building Claude. The hedge bet of the AI arms race.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-databricks.html">Databricks Series J</a></h2>
-            <div class="review-meta">
-                Series J • $10B @ $62B | Lead: a16z, Various | December 2024
-                <span class="rating-small">7.4</span>
+            <!-- Mistral AI Series A - 6.8 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/mistral-ai.html" style="font-size: 18px; font-weight: 700;">Mistral AI Series A</a>
+                    <span class="rating-small">6.8</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$415M at $2B valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Rex Aleeves</div>
             </div>
-            <div class="review-excerpt">
-                Data lakehouse company at Series J. That's not a typo. Competing with Snowflake. Open source roots. Enterprise AI infrastructure play.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-anduril.html">Anduril Series F</a></h2>
-            <div class="review-meta">
-                Series F • $1.5B @ $14B | Lead: Founders Fund | August 2024
-                <span class="rating-small">7.1</span>
+            <!-- Canva Series F - 6.6 -->
+            <div class="deal-item" data-sector="design" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/canva.html" style="font-size: 18px; font-weight: 700;">Canva Series F</a>
+                    <span class="rating-small">6.6</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$200M at $40B valuation</div>
+                <div style="font-size: 12px; color: #999;">Design | Reviewed by Shyan Rreiber</div>
             </div>
-            <div class="review-excerpt">
-                Palmer Luckey's defense tech company. Drones, AI, border security. The VC-backed military industrial complex. Controversial but crushing it financially.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-stripe.html">Stripe Series I</a></h2>
-            <div class="review-meta">
-                Series I • $6.5B @ $50B (down from $95B) | Lead: Sequoia, a16z, GIC | March 2023
-                <span class="rating-small">6.9</span>
+            <!-- xAI Series B - 6.6 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/xai.html" style="font-size: 18px; font-weight: 700;">xAI Series B</a>
+                    <span class="rating-small">6.6</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$6B at $24B valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Ciana Dastellano</div>
             </div>
-            <div class="review-excerpt">
-                The down round heard round the world. $95B to $50B. Employee liquidity deal. The Collison brothers taking the medicine. Still printing money though.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-perplexity.html">Perplexity Series B</a></h2>
-            <div class="review-meta">
-                Series B • $73.6M @ $520M | Lead: IVP, NEA | January 2024
-                <span class="rating-small">6.2</span>
+            <!-- Ramp Series D - 6.2 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/ramp.html" style="font-size: 18px; font-weight: 700;">Ramp Series D</a>
+                    <span class="rating-small">6.2</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$300M at $8.1B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Tarcus Mhorne</div>
             </div>
-            <div class="review-excerpt">
-                AI search engine. Taking on Google. Accused of scraping everyone. Move fast, cite sources sometimes. The "Google killer" narrative continues.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-safe-superintelligence.html">Safe Superintelligence Seed</a></h2>
-            <div class="review-meta">
-                Seed • $1B @ $5B | Lead: a16z, Sequoia, etc | September 2024
-                <span class="rating-small">5.5</span>
+            <!-- Character.AI Series A - 6.1 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/character-ai.html" style="font-size: 18px; font-weight: 700;">Character.AI Series A</a>
+                    <span class="rating-small">6.1</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$150M at $1B valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Tarcus Mhorne</div>
             </div>
-            <div class="review-excerpt">
-                Ilya Sutskever's new company after leaving OpenAI. $1B seed round. No product. Just vibes and Ilya's brain. The ultimate bet on one person.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-openai.html">OpenAI Series ???</a></h2>
-            <div class="review-meta">
-                Series ??? • $6.6B @ $157B | Lead: Thrive Capital | October 2024
-                <span class="rating-small">5.2</span>
+            <!-- Scale AI Series E - 5.9 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/scale-ai.html" style="font-size: 18px; font-weight: 700;">Scale AI Series E</a>
+                    <span class="rating-small">5.9</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$325M at $7.3B valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Michard Reltzer</div>
             </div>
-            <div class="review-excerpt">
-                The one that started the AI arms race. Sam Altman's redemption arc. Converted to for-profit. Microsoft's best friend. The valuation that makes VCs sweat.
-            </div>
-        </div>
 
-        <div class="review-listing">
-            <h2><a href="deals/deal-character-ai.html">Character.AI Acqui-hire</a></h2>
-            <div class="review-meta">
-                Acqui-hire (Sort of) • $2.5B @ Complicated | Lead: Google | August 2024
-                <span class="rating-small">4.8</span>
+            <!-- Rippling Series E - 5.8 -->
+            <div class="deal-item" data-sector="enterprise" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/rippling.html" style="font-size: 18px; font-weight: 700;">Rippling Series E</a>
+                    <span class="rating-small">5.8</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$500M at $11.25B valuation</div>
+                <div style="font-size: 12px; color: #999;">HR Tech | Reviewed by Ten Bhompson</div>
             </div>
-            <div class="review-excerpt">
-                Google licensed the tech, hired the founders, but didn't buy the company. Investors got paid. Weird structure to avoid regulators. The new M&A playbook.
+
+            <!-- Figma Series E - 5.7 -->
+            <div class="deal-item" data-sector="design" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/figma.html" style="font-size: 18px; font-weight: 700;">Figma Series E</a>
+                    <span class="rating-small">5.7</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$200M at $10B valuation</div>
+                <div style="font-size: 12px; color: #999;">Design | Reviewed by Tia Jolentino</div>
+            </div>
+
+            <!-- Revolut Series E - 5.6 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/revolut.html" style="font-size: 18px; font-weight: 700;">Revolut Series E</a>
+                    <span class="rating-small">5.6</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$800M at $33B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Hessica Jopper</div>
+            </div>
+
+            <!-- Faire Series G - 5.5 -->
+            <div class="deal-item" data-sector="other" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/faire.html" style="font-size: 18px; font-weight: 700;">Faire Series G</a>
+                    <span class="rating-small">5.5</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$400M at $12.4B valuation</div>
+                <div style="font-size: 12px; color: #999;">E-commerce | Reviewed by Michard Reltzer</div>
+            </div>
+
+            <!-- Anthropic Series D - 5.4 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/anthropic.html" style="font-size: 18px; font-weight: 700;">Anthropic Series D</a>
+                    <span class="rating-small">5.4</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$4B at $18B valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Shyan Rreiber</div>
+            </div>
+
+            <!-- Anduril Series E - 5.3 -->
+            <div class="deal-item" data-sector="other" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/anduril.html" style="font-size: 18px; font-weight: 700;">Anduril Series E</a>
+                    <span class="rating-small">5.3</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$1.5B at $12.5B valuation</div>
+                <div style="font-size: 12px; color: #999;">Defense | Reviewed by Sick Nylvester</div>
+            </div>
+
+            <!-- Checkout.com Series D - 5.1 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/checkout-com.html" style="font-size: 18px; font-weight: 700;">Checkout.com Series D</a>
+                    <span class="rating-small">5.1</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$1B at $40B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Hessica Jopper</div>
+            </div>
+
+            <!-- OpenAI Series E - 5.0 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/openai.html" style="font-size: 18px; font-weight: 700;">OpenAI Series E</a>
+                    <span class="rating-small">5.0</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$6.6B at $157B valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Cam Shen</div>
+            </div>
+
+            <!-- Databricks Series I - 5.0 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/databricks.html" style="font-size: 18px; font-weight: 700;">Databricks Series I</a>
+                    <span class="rating-small">5.0</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$500M at $43B valuation</div>
+                <div style="font-size: 12px; color: #999;">Data/AI | Reviewed by Tarcus Mhorne</div>
+            </div>
+
+            <!-- Deel Series D - 4.9 -->
+            <div class="deal-item" data-sector="enterprise" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/deel.html" style="font-size: 18px; font-weight: 700;">Deel Series D</a>
+                    <span class="rating-small">4.9</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$425M at $12B valuation</div>
+                <div style="font-size: 12px; color: #999;">HR Tech | Reviewed by Kamie Jowalski</div>
+            </div>
+
+            <!-- Miro Series C - 4.7 -->
+            <div class="deal-item" data-sector="enterprise" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/miro.html" style="font-size: 18px; font-weight: 700;">Miro Series C</a>
+                    <span class="rating-small">4.7</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$400M at $17.5B valuation</div>
+                <div style="font-size: 12px; color: #999;">Collaboration | Reviewed by Tia Jolentino</div>
+            </div>
+
+            <!-- Brex Series D - 4.3 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/brex.html" style="font-size: 18px; font-weight: 700;">Brex Series D</a>
+                    <span class="rating-small">4.3</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$425M at $12.3B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Shyan Rreiber</div>
+            </div>
+
+            <!-- SpaceX Series N - 4.0 -->
+            <div class="deal-item" data-sector="other" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/spacex.html" style="font-size: 18px; font-weight: 700;">SpaceX Series N</a>
+                    <span class="rating-small">4.0</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$750M at $137B valuation</div>
+                <div style="font-size: 12px; color: #999;">Aerospace | Reviewed by Drent BiCrescenzo</div>
+            </div>
+
+            <!-- Klarna Series D - 3.6 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/klarna.html" style="font-size: 18px; font-weight: 700;">Klarna Series D</a>
+                    <span class="rating-small">3.6</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$800M at $6.7B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Michard Reltzer</div>
+            </div>
+
+            <!-- Stripe Series I - 3.4 -->
+            <div class="deal-item" data-sector="fintech" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/stripe.html" style="font-size: 18px; font-weight: 700;">Stripe Series I</a>
+                    <span class="rating-small">3.4</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$6.5B at $50B valuation</div>
+                <div style="font-size: 12px; color: #999;">Fintech | Reviewed by Rex Aleeves</div>
+            </div>
+
+            <!-- Discord Series H - 3.4 -->
+            <div class="deal-item" data-sector="other" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/discord.html" style="font-size: 18px; font-weight: 700;">Discord Series H</a>
+                    <span class="rating-small">3.4</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$500M at $15B valuation</div>
+                <div style="font-size: 12px; color: #999;">Social | Reviewed by Cam Shen</div>
+            </div>
+
+            <!-- Wiz Series D - 3.4 -->
+            <div class="deal-item" data-sector="security" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/wiz.html" style="font-size: 18px; font-weight: 700;">Wiz Series D</a>
+                    <span class="rating-small">3.4</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$300M at $10B valuation</div>
+                <div style="font-size: 12px; color: #999;">Security | Reviewed by Wavid Foster Dallace</div>
+            </div>
+
+            <!-- Notion Series C - 3.3 -->
+            <div class="deal-item" data-sector="enterprise" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/notion.html" style="font-size: 18px; font-weight: 700;">Notion Series C</a>
+                    <span class="rating-small">3.3</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$275M at $10B valuation</div>
+                <div style="font-size: 12px; color: #999;">Productivity | Reviewed by Michard Reltzer</div>
+            </div>
+
+            <!-- Airtable Series F - 3.2 -->
+            <div class="deal-item" data-sector="enterprise" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/airtable.html" style="font-size: 18px; font-weight: 700;">Airtable Series F</a>
+                    <span class="rating-small">3.2</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$735M at $11B valuation</div>
+                <div style="font-size: 12px; color: #999;">Productivity | Reviewed by Ciana Dastellano</div>
+            </div>
+
+            <!-- Celonis Series D - 3.1 -->
+            <div class="deal-item" data-sector="enterprise" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/celonis.html" style="font-size: 18px; font-weight: 700;">Celonis Series D</a>
+                    <span class="rating-small">3.1</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$1B at $11B valuation</div>
+                <div style="font-size: 12px; color: #999;">Enterprise | Reviewed by Bester Langs</div>
+            </div>
+
+            <!-- Snyk Series F - 3.1 -->
+            <div class="deal-item" data-sector="security" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/snyk.html" style="font-size: 18px; font-weight: 700;">Snyk Series F</a>
+                    <span class="rating-small">3.1</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$530M at $8.5B valuation</div>
+                <div style="font-size: 12px; color: #999;">Security | Reviewed by Bester Langs</div>
+            </div>
+
+            <!-- Perplexity Series B - 3.1 -->
+            <div class="deal-item" data-sector="ai" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="deal-reviews/perplexity.html" style="font-size: 18px; font-weight: 700;">Perplexity Series B</a>
+                    <span class="rating-small">3.1</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">$73.6M at $520M valuation</div>
+                <div style="font-size: 12px; color: #999;">AI | Reviewed by Hessica Jopper</div>
             </div>
         </div>
 
@@ -173,6 +373,34 @@
     </td>
 </tr>
 </table>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.category-btn');
+    const deals = document.querySelectorAll('.deal-item');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+
+            // Update button states
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Show/hide deals
+            deals.forEach(deal => {
+                if (category === 'all') {
+                    deal.style.display = 'block';
+                } else if (deal.getAttribute('data-sector') === category) {
+                    deal.style.display = 'block';
+                } else {
+                    deal.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
 
 </body>
 </html>
