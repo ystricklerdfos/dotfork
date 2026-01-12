@@ -10,11 +10,15 @@
       "use": "@vercel/static"
     },
     {
-      "src": "*.css",
+      "src": "styles.css",
       "use": "@vercel/static"
     },
     {
-      "src": "*.js",
+      "src": "generator-ai.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "my-reviews.js",
       "use": "@vercel/static"
     },
     {
@@ -22,18 +26,12 @@
       "use": "@vercel/static"
     },
     {
-      "src": "images/**/*",
+      "src": "vc-reviews/**/*.html",
       "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "src": "images/**/*",
+      "use": "@vercel/static"
     }
   ]
 }
