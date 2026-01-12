@@ -123,6 +123,10 @@ body {
     letter-spacing: 0.5px;
 }
 
+.review-meta-desktop {
+    display: inline;
+}
+
 .review-excerpt {
     margin: 15px 0;
     line-height: 1.7;
@@ -368,6 +372,7 @@ table {
 @media screen and (max-width: 768px) {
     body {
         font-size: 16px;
+        -webkit-tap-highlight-color: rgba(255, 53, 48, 0.2);
     }
 
     .header {
@@ -379,6 +384,12 @@ table {
         gap: 10px;
     }
 
+    .logo-container a {
+        display: block;
+        position: relative;
+        z-index: 10;
+    }
+
     .logo-icon {
         width: 50px;
         height: 50px;
@@ -387,6 +398,12 @@ table {
     .logo {
         font-size: 42px;
         letter-spacing: -1px;
+    }
+
+    .logo a {
+        display: inline-block;
+        position: relative;
+        z-index: 10;
     }
 
     .tagline {
@@ -405,6 +422,9 @@ table {
     .nav a {
         margin: 5px 10px;
         font-size: 14px;
+        padding: 8px 4px;
+        position: relative;
+        z-index: 10;
     }
 
     .container {
@@ -432,8 +452,18 @@ table {
     }
 
     .rating-small {
-        font-size: 15px;
-        padding: 4px 10px;
+        font-size: 14px;
+        padding: 3px 8px;
+        display: block;
+        width: fit-content;
+        margin-top: 8px;
+    }
+
+    .bnw-badge {
+        display: block;
+        width: fit-content;
+        margin-left: 0;
+        margin-top: 6px;
     }
 
     .info-box {
@@ -458,17 +488,36 @@ table {
         font-size: 13px;
     }
 
+    .review-listing {
+        padding: 20px 0;
+    }
+
     .review-listing h2 {
-        font-size: 22px;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .review-listing h2 a {
+        display: block;
+        padding: 4px 0;
+        position: relative;
+        z-index: 10;
     }
 
     .review-excerpt {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.6;
+        display: none;
     }
 
     .review-meta {
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* Hide extra info on mobile listings */
+    .review-meta-mobile-hide {
+        display: none;
     }
 
     .footer {
@@ -477,9 +526,31 @@ table {
         font-size: 12px;
     }
 
+    .footer a {
+        padding: 8px 4px;
+    }
+
     /* Archive page review items */
     .review-item a {
         font-size: 18px !important;
+        display: block;
+        padding: 8px 0;
+    }
+
+    /* Make all links more tappable */
+    a {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Generator promo mobile */
+    .generator-promo {
+        padding: 20px !important;
+    }
+
+    .generator-promo a {
+        display: block;
+        padding: 14px 20px;
     }
 }
 
@@ -499,8 +570,9 @@ table {
 
     .nav a {
         margin: 4px 8px;
-        font-size: 13px;
-        letter-spacing: 1px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        padding: 10px 6px;
     }
 
     .review-title {
@@ -517,16 +589,37 @@ table {
         padding: 10px 16px;
     }
 
+    .review-listing {
+        padding: 16px 0;
+    }
+
     .review-listing h2 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .review-listing h2 a {
+        padding: 6px 0;
+    }
+
+    .review-meta {
+        font-size: 10px;
     }
 
     .review-excerpt {
-        font-size: 15px;
+        display: none;
     }
 
     .verdict-box {
         font-size: 15px;
+    }
+
+    .rating-small {
+        font-size: 13px;
+        padding: 3px 7px;
+    }
+
+    .review-meta-desktop {
+        display: none;
     }
 }
 

@@ -66,24 +66,24 @@
         <div class="review-listing">
             <h2><a href="reviews/the-creative-independent.html">The Creative Independent</a></h2>
             <div class="review-meta">
-                Creator Economy | thecreativeindependent.com | Reviewed by Wann Jenner | January 12, 2026
+                Creator Economy <span class="review-meta-desktop">| Wann Jenner</span>
                 <span class="rating-small">8.6</span>
                 <span class="bnw-badge">Best New Website</span>
             </div>
             <div class="review-excerpt">
-                Free, ad-free, and full of wisdom from working artists. It's like if Studs Terkel had a website. The interviews here have the intimacy of the best Rolling Stone pieces from the golden era...
+                Free, ad-free, and full of wisdom from working artists. It's like if Studs Terkel had a website...
             </div>
         </div>
 
         <div class="review-listing">
             <h2><a href="reviews/are-na.html">Are.na</a></h2>
             <div class="review-meta">
-                Creator Economy | are.na | Reviewed by Wann Jenner | January 12, 2026
+                Creator Economy <span class="review-meta-desktop">| Wann Jenner</span>
                 <span class="rating-small">8.5</span>
                 <span class="bnw-badge">Best New Website</span>
             </div>
             <div class="review-excerpt">
-                In an age of algorithmic feeds and dopamine loops, Are.na is a quiet revolution. No likes, no followers, no ads. Just ideas connecting to other ideas. It's what the internet was supposed to be...
+                In an age of algorithmic feeds and dopamine loops, Are.na is a quiet revolution...
             </div>
         </div>
 
@@ -111,7 +111,7 @@
         <div class="review-listing">
             <h2><a href="reviews/craigslist.html">Craigslist</a></h2>
             <div class="review-meta">
-                Web Classics | craigslist.org | Reviewed by Malt Wossberg | January 12, 2026
+                Web Classics <span class="review-meta-desktop">| Malt Wossberg</span>
                 <span class="rating-small">10.0</span>
                 <span class="bnw-badge">Best New Website</span>
             </div>
@@ -123,36 +123,36 @@
         <div class="review-listing">
             <h2><a href="reviews/wikipedia.html">Wikipedia</a></h2>
             <div class="review-meta">
-                Reference | wikipedia.org | Reviewed by Sara Kwisher | January 12, 2026
+                Reference <span class="review-meta-desktop">| Sara Kwisher</span>
                 <span class="rating-small">9.2</span>
                 <span class="bnw-badge">Best New Website</span>
             </div>
             <div class="review-excerpt">
-                An encyclopedia that anyone can edit, maintained by volunteers, with no advertising, no VC funding. The economics majors would tell you it's impossible. And yet...
+                An encyclopedia that anyone can edit, maintained by volunteers, with no advertising, no VC funding...
             </div>
         </div>
 
         <div class="review-listing">
             <h2><a href="reviews/the-creative-independent.html">The Creative Independent</a></h2>
             <div class="review-meta">
-                Creator Economy | thecreativeindependent.com | Reviewed by Wann Jenner | January 12, 2026
+                Creator Economy <span class="review-meta-desktop">| Wann Jenner</span>
                 <span class="rating-small">8.6</span>
                 <span class="bnw-badge">Best New Website</span>
             </div>
             <div class="review-excerpt">
-                Free, ad-free, and full of wisdom from working artists. It's like if Studs Terkel had a website...
+                Free, ad-free, and full of wisdom from working artists...
             </div>
         </div>
 
         <div class="review-listing">
             <h2><a href="reviews/are-na.html">Are.na</a></h2>
             <div class="review-meta">
-                Creator Economy | are.na | Reviewed by Wann Jenner | January 12, 2026
+                Creator Economy <span class="review-meta-desktop">| Wann Jenner</span>
                 <span class="rating-small">8.5</span>
                 <span class="bnw-badge">Best New Website</span>
             </div>
             <div class="review-excerpt">
-                In an age of algorithmic feeds and dopamine loops, Are.na is a quiet revolution. No likes, no followers, no ads...
+                In an age of algorithmic feeds and dopamine loops, Are.na is a quiet revolution...
             </div>
         </div>
 
@@ -1678,17 +1678,17 @@ async function loadRecentReviews() {
 
     let html = '';
     recentReviews.forEach(review => {
-        const badge = review.isCommunity ? '<span class="community-badge" style="background: #4a90d9; color: white; padding: 2px 8px; font-size: 10px; margin-left: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Community</span>' : '';
-        const ratingClass = parseFloat(review.rating) >= 8.5 ? 'rating-small' : 'rating-small';
-        const onclick = review.isCommunity ? `onclick="viewCommunityReview('${review.reviewId}')" style="cursor: pointer;"` : '';
-        const href = review.isCommunity ? '#' : review.url;
+        const badge = review.isCommunity ? '<span class="community-badge" style="background: #4a90d9; color: white; padding: 2px 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Community</span>' : '';
+        const onclick = review.isCommunity ? `onclick="viewCommunityReview('${review.reviewId}')"` : '';
+        const href = review.isCommunity ? 'javascript:void(0)' : review.url;
 
         html += `
         <div class="review-listing">
-            <h2><a href="${href}" ${onclick}>${review.title}</a>${badge}</h2>
+            <h2><a href="${href}" ${onclick}>${review.title}</a></h2>
             <div class="review-meta">
-                ${review.category} | Reviewed by ${review.reviewer} | ${review.date}
-                <span class="${ratingClass}">${review.rating}</span>
+                ${review.category} <span class="review-meta-desktop">| ${review.reviewer}</span>
+                <span class="rating-small">${review.rating}</span>
+                ${badge}
             </div>
         </div>`;
     });
