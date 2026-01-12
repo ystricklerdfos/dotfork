@@ -196,7 +196,7 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
                 <a href="my-reviews.html" style="display: inline-block; background: white; color: #333; padding: 8px 16px; text-decoration: none; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 10px;">View My Reviews</a>
                 <button id="submitCommunityBtn" onclick="submitToCommunity()" style="display: inline-block; background: #ff3530; color: white; padding: 8px 16px; border: none; cursor: pointer; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Submit to Community</button>
             `;
-            document.getElementById('outputVerdict').after(saveNotice);
+            document.getElementById('outputBody').after(saveNotice);
         }
 
         document.getElementById('reviewOutput').style.display = 'block';
