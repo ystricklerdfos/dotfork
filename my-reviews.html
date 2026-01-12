@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>My Reviews - DOTFORK</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<!-- Header -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="header">
+        <div class="logo">DOTFORK</div>
+        <div class="tagline">The Most Trusted Voice in Dot-Com Criticism</div>
+    </td>
+</tr>
+</table>
+
+<!-- Navigation -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="nav">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Reviews</a>
+        <a href="generator.html">Generator</a>
+        <a href="about.html">About</a>
+    </td>
+</tr>
+</table>
+
+<!-- Main Content -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="container">
+
+        <h1>My Generated Reviews</h1>
+
+        <p style="font-size: 13px; color: #666; margin-bottom: 30px;">
+            Reviews you've generated are saved in your browser. They'll persist until you clear your browser data.
+        </p>
+
+        <div id="reviewsList">
+            <!-- Reviews will be loaded here -->
+        </div>
+
+        <div id="emptyState" style="display: none; text-align: center; padding: 60px 20px; color: #999;">
+            <div style="font-size: 48px; margin-bottom: 20px;">📝</div>
+            <div style="font-size: 16px; margin-bottom: 10px;">No reviews yet</div>
+            <div style="font-size: 13px;">
+                <a href="generator.html" style="color: #ff3530;">Generate your first review →</a>
+            </div>
+        </div>
+
+    </td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+    <td class="footer">
+        &copy; 1999-2026 DOTFORK. All rights reserved.<br>
+        Last updated: January 12, 2026
+    </td>
+</tr>
+</table>
+
+<script>
+const USER_REVIEWS_KEY = 'dotfork_user_reviews';
+
+function getUserReviews() {
+    try {
+        const stored = localStorage.getItem(USER_REVIEWS_KEY);
+        return stored ? JSON.parse(stored) : [];
+    } catch {
+        return [];
+    }
+}
+
+function deleteReview(filename) {
+    if (!confirm('Delete this review?')) return;
+
+    const reviews = getUserReviews();
+    const filtered = reviews.filter(r => r.filename !== filename);
+    localStorage.setItem(USER_REVIEWS_KEY, JSON.stringify(filtered));
+    renderReviews();
+}
+
+function renderReviews() {
+    const reviews = getUserReviews();
+    const container = document.getElementById('reviewsList');
+    const emptyState = document.getElementById('emptyState');
+
+    if (reviews.length === 0) {
+        container.innerHTML = '';
+        emptyState.style.display = 'block';
+        return;
+    }
+
+    emptyState.style.display = 'none';
+
+    let html = '';
+    reviews.forEach(review => {
+        const bnwBadge = review.isBNW ? '<span class="bnw-badge">Best New Website</span>' : '';
+
+        html += `
+            <div class="review-listing" style="position: relative;">
+                <button onclick="deleteReview('${review.filename}')"
+                        style="position: absolute; top: 10px; right: 10px; background: #ff3530; color: white; border: none; padding: 5px 10px; font-size: 10px; cursor: pointer;">
+                    DELETE
+                </button>
+                <h2>${review.site.name}</h2>
+                <div class="review-meta">
+                    ${review.category} | <a href="https://${review.site.url}" target="_blank">${review.site.url}</a> | Reviewed by ${review.reviewer} | ${review.date}
+                    <span class="rating-small">${review.rating.toFixed(1)}</span>
+                    ${bnwBadge}
+                </div>
+                <div class="review-excerpt">
+                    ${review.reviewText.substring(0, 300)}...
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>VERDICT:</strong> ${review.verdict}
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+}
+
+// Render on page load
+renderReviews();
+</script>
+
+</body>
+</html>

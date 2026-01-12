@@ -1,6 +1,11 @@
 // DOTFORK AI-Powered Review Generator
 
-const API_URL = 'http://localhost:3000/api/generate-review';
+// Use relative URL for Vercel serverless function
+const API_URL = '/api/generate-review';
+const SAVE_URL = '/api/save-review';
+
+// Store for user-generated reviews (persisted to localStorage)
+const USER_REVIEWS_KEY = 'dotfork_user_reviews';
 
 function extractDomain(url) {
     try {
@@ -8,6 +13,33 @@ function extractDomain(url) {
         return urlObj.hostname.replace('www.', '');
     } catch {
         return url;
+    }
+}
+
+function getUserReviews() {
+    try {
+        const stored = localStorage.getItem(USER_REVIEWS_KEY);
+        return stored ? JSON.parse(stored) : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveUserReview(review) {
+    try {
+        const reviews = getUserReviews();
+        // Check if review already exists (by filename)
+        const existingIndex = reviews.findIndex(r => r.filename === review.filename);
+        if (existingIndex >= 0) {
+            reviews[existingIndex] = review;
+        } else {
+            reviews.unshift(review); // Add to beginning
+        }
+        localStorage.setItem(USER_REVIEWS_KEY, JSON.stringify(reviews));
+        return true;
+    } catch (e) {
+        console.error('Failed to save review:', e);
+        return false;
     }
 }
 
@@ -86,12 +118,34 @@ document.getElementById('reviewForm').addEventListener('submit', async function(
 
         document.getElementById('outputVerdict').innerHTML = '<strong>VERDICT:</strong> ' + review.verdict;
 
+        // Save to user's local collection
+        const reviewData = {
+            site: { name: review.title, url: domain },
+            category: review.category,
+            reviewer: review.reviewer,
+            date: review.date,
+            rating: review.rating,
+            isBNW: review.isBNW,
+            reviewText: review.reviewText,
+            verdict: review.verdict,
+            filename: review.filename,
+            userGenerated: true
+        };
+
+        if (saveUserReview(reviewData)) {
+            // Show save confirmation
+            const saveNotice = document.createElement('div');
+            saveNotice.style.cssText = 'background-color: #4CAF50; color: white; padding: 10px 15px; margin-top: 20px; font-size: 12px; text-align: center;';
+            saveNotice.innerHTML = '✓ Review saved to your collection! <a href="my-reviews.html" style="color: white; text-decoration: underline;">View My Reviews</a>';
+            document.getElementById('outputVerdict').after(saveNotice);
+        }
+
         document.getElementById('reviewOutput').style.display = 'block';
         document.getElementById('reviewOutput').scrollIntoView({ behavior: 'smooth' });
 
     } catch (error) {
         console.error('Error:', error);
-        alert('Error generating review: ' + error.message + '\n\nMake sure:\n1. The backend server is running (node server.js)\n2. You have set ANTHROPIC_API_KEY in .env file');
+        alert('Error generating review: ' + error.message);
     } finally {
         // Re-enable button
         submitButton.disabled = false;
