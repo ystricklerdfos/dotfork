@@ -623,6 +623,81 @@ table {
     }
 }
 
+/* Ad/Promo Box Styles */
+.ad-box {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .ad-box {
+        padding: 20px 15px !important;
+        margin: 20px 0 !important;
+    }
+
+    .ad-box * {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    /* Festival ad mobile */
+    .ad-festival-title {
+        font-size: 20px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .ad-festival-subtitle {
+        font-size: 9px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .ad-lineup {
+        font-size: 11px !important;
+        line-height: 1.8 !important;
+    }
+
+    .ad-podcast-title {
+        font-size: 18px !important;
+    }
+
+    .ad-podcast-episodes {
+        font-size: 12px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ad-box {
+        padding: 15px 12px !important;
+        margin: 15px 0 !important;
+    }
+
+    .ad-festival-title {
+        font-size: 16px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .ad-lineup {
+        font-size: 10px !important;
+        line-height: 1.6 !important;
+    }
+
+    .ad-lineup br {
+        display: block;
+        margin-bottom: 8px;
+        content: "";
+    }
+
+    .ad-podcast-title {
+        font-size: 16px !important;
+    }
+
+    .ad-podcast-episodes {
+        font-size: 11px !important;
+    }
+}
+
 /* Category Filter Styles */
 .category-filter {
     margin-bottom: 30px;
