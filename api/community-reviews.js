@@ -10,11 +10,23 @@ export default async function handler(req, res) {
         return res.status(200).end();
     }
 
+    // Check if Blob is configured
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+        console.error('BLOB_READ_WRITE_TOKEN not configured');
+        return res.status(500).json({
+            error: 'Storage not configured',
+            message: 'Please add BLOB_READ_WRITE_TOKEN to environment variables'
+        });
+    }
+
     // GET - Retrieve all community reviews
     if (req.method === 'GET') {
         try {
             // List all blobs in the community-reviews folder
-            const { blobs } = await list({ prefix: 'community-reviews/' });
+            const { blobs } = await list({
+                prefix: 'community-reviews/',
+                token: process.env.BLOB_READ_WRITE_TOKEN
+            });
 
             // Fetch each review's content
             const reviews = [];
@@ -55,7 +67,7 @@ export default async function handler(req, res) {
             }
 
             // Generate a unique ID for this review
-            const reviewId = `${review.filename || review.site.name.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}`;
+            const reviewId = `${review.filename || review.site.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${Date.now()}`;
 
             // Add metadata
             const reviewData = {
@@ -71,7 +83,8 @@ export default async function handler(req, res) {
                 JSON.stringify(reviewData),
                 {
                     contentType: 'application/json',
-                    access: 'public'
+                    access: 'public',
+                    token: process.env.BLOB_READ_WRITE_TOKEN
                 }
             );
 

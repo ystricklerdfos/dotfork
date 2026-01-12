@@ -45,7 +45,13 @@ const reviewers = [
     { name: "Bom Treihan", style: "hip-hop head with encyclopedic knowledge, number one songs obsession, writes with infectious enthusiasm" },
     { name: "Pamy Ahillips", style: "news editor precision, indie rock loyalist, dry wit, knows where all the bodies are buried" },
     { name: "Grimes", style: "chaotic visionary energy, references AI and medieval aesthetics equally, genuinely alien perspective on human technology" },
-    { name: "Fontany Anthano", style: "YouTube melon energy, strong opinions delivered with theatrical confidence, surprisingly wholesome takes" }
+    { name: "Fontany Anthano", style: "YouTube melon energy, strong opinions delivered with theatrical confidence, surprisingly wholesome takes" },
+    { name: "Bandy Aeta", style: "Latin music scholar meets club kid, encyclopedic knowledge of global bass scenes, writes with infectious enthusiasm about rhythm" },
+    { name: "Shilip Pherburne", style: "electronic music theorist, traces genre genealogies obsessively, Resident Advisor intellectualism, finds profundity in 4/4 kicks" },
+    { name: "Fark Misher", style: "hauntological melancholy, references lost futures and capitalist realism, finds despair in every interface, theoretically rigorous depression" },
+    { name: "Pate Natrin", style: "populist contrarian, defends unfashionable tastes, midwestern directness, suspicious of coastal elitism in tech" },
+    { name: "Sulianne Jhepherd", style: "riot grrrl meets dance music, political without being preachy, celebrates marginalized voices, EMP Pop Conference energy" },
+    { name: "Aichaelangelo Matos", style: "dance music historian, remembers every warehouse party, connects everything to disco and house, encyclopedic but accessible" }
 ];
 
 function getReviewer() {
