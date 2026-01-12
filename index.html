@@ -1640,16 +1640,19 @@ async function loadRecentReviews() {
     try {
         const response = await fetch('/api/community-reviews');
         const data = await response.json();
-        const communityReviews = (data.reviews || []).map(r => ({
-            title: r.name,
-            url: '#',
-            category: r.category || 'Community',
-            rating: r.rating,
-            reviewer: r.reviewer,
-            date: new Date(r.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-            isCommunity: true,
-            reviewId: r.id
-        }));
+        const communityReviews = (data.reviews || [])
+            // Filter out reviews with undefined/missing data
+            .filter(r => r && r.site?.name && r.reviewer && r.rating !== undefined)
+            .map(r => ({
+                title: r.site.name,
+                url: '#',
+                category: r.category || 'Community',
+                rating: r.rating,
+                reviewer: r.reviewer,
+                date: new Date(r.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+                isCommunity: true,
+                reviewId: r.id
+            }));
         allReviews = [...communityReviews, ...allReviews];
     } catch (error) {
         console.log('Could not load community reviews');

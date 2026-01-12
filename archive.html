@@ -1530,16 +1530,19 @@ async function loadMostRecentReviews() {
     try {
         const response = await fetch('/api/community-reviews');
         const data = await response.json();
-        const communityReviews = (data.reviews || []).map(r => ({
-            title: r.site?.name || r.name || 'Unknown',
-            url: '#',
-            category: r.category || 'Community',
-            rating: r.rating?.toFixed(1) || '0.0',
-            reviewer: r.reviewer || 'Anonymous',
-            date: new Date(r.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-            isCommunity: true,
-            reviewId: r.id
-        }));
+        const communityReviews = (data.reviews || [])
+            // Filter out reviews with undefined/missing data
+            .filter(r => r && r.site?.name && r.reviewer && r.rating !== undefined)
+            .map(r => ({
+                title: r.site.name,
+                url: '#',
+                category: r.category || 'Community',
+                rating: r.rating?.toFixed(1) || '0.0',
+                reviewer: r.reviewer,
+                date: new Date(r.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+                isCommunity: true,
+                reviewId: r.id
+            }));
         // Put community reviews at the start (most recent)
         allReviews = [...communityReviews, ...allReviews];
     } catch (error) {
