@@ -68,6 +68,7 @@
                 <button class="category-btn" data-category="project-management">Project Management</button>
                 <button class="category-btn" data-category="venture-capital">Venture Capital</button>
                 <button class="category-btn" data-category="classics">Web Classics</button>
+                <button class="category-btn" data-category="community">Community</button>
             </div>
         </div>
 
@@ -1343,6 +1344,17 @@
         </div>
         </div>
 
+        <div class="category-section" data-category="community">
+        <h3>Community Reviews</h3>
+        <p style="margin-bottom: 20px; color: #666; font-size: 13px;">
+            User-generated reviews submitted by the DOTFORK community.
+            <a href="generator.html" style="color: #ff3530;">Generate & submit your own review</a>
+        </p>
+        <div id="communityReviewsList" style="margin-bottom: 40px;">
+            <p style="color: #999; font-style: italic;">Loading community reviews...</p>
+        </div>
+        </div>
+
     </td>
 </tr>
 </table>
@@ -1382,7 +1394,97 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Load community reviews
+    loadCommunityReviews();
 });
+
+async function loadCommunityReviews() {
+    const container = document.getElementById('communityReviewsList');
+    if (!container) return;
+
+    try {
+        const response = await fetch('/api/community-reviews');
+        if (!response.ok) throw new Error('Failed to load');
+
+        const data = await response.json();
+        const reviews = data.reviews || [];
+
+        if (reviews.length === 0) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 40px; background: #f9f9f9;">
+                    <div style="font-size: 14px; color: #666;">No community reviews yet.</div>
+                    <a href="generator.html" style="display: inline-block; margin-top: 15px; background-color: #ff3530; color: #ffffff; padding: 10px 20px; font-size: 11px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;">Be the First to Submit</a>
+                </div>
+            `;
+            return;
+        }
+
+        // Update review count in page subtitle
+        const countText = document.querySelector('.container > p');
+        if (countText) {
+            const staticCount = 124;
+            const totalCount = staticCount + reviews.length;
+            countText.innerHTML = `<span style="color: #ff3530; font-weight: 700;">${totalCount}</span> brutally honest reviews of modern websites. Sorted by category.`;
+        }
+
+        let html = '';
+        reviews.forEach(review => {
+            const bnwBadge = review.isBNW ? ' <span class="bnw-badge">Best New Website</span>' : '';
+            html += `
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">
+                <div style="margin-bottom: 8px;">
+                    <a href="javascript:void(0)" onclick="viewCommunityReview('${review.id}')" style="font-size: 18px; font-weight: 700;">${review.site?.name || 'Unknown'}</a>
+                    <span class="rating-small">${review.rating?.toFixed(1) || '0.0'}</span>${bnwBadge}
+                    <span style="background: #333; color: white; font-size: 9px; padding: 2px 6px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Community</span>
+                </div>
+                <div style="font-size: 12px; color: #999;">
+                    ${review.site?.url || ''} | Reviewed by ${review.reviewer || 'Anonymous'}
+                </div>
+            </div>
+            `;
+        });
+
+        container.innerHTML = html;
+    } catch (error) {
+        console.error('Error loading community reviews:', error);
+        container.innerHTML = `<p style="color: #999; font-style: italic;">Unable to load community reviews.</p>`;
+    }
+}
+
+function viewCommunityReview(reviewId) {
+    fetch('/api/community-reviews')
+        .then(r => r.json())
+        .then(data => {
+            const review = (data.reviews || []).find(r => r.id === reviewId);
+            if (!review) return;
+
+            const paragraphs = review.reviewText ? review.reviewText.split('\n\n').map(p => `<p>${p}</p>`).join('') : '<p>No review text available.</p>';
+            const bnwBadge = review.isBNW ? '<span class="bnw-badge">Best New Website</span>' : '';
+
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 1000; overflow-y: auto; padding: 20px;';
+            modal.innerHTML = `
+                <div style="max-width: 800px; margin: 40px auto; background: white; padding: 40px; position: relative;">
+                    <button onclick="this.closest('div').parentElement.remove()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; line-height: 1;">&times;</button>
+                    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #ff3530; margin-bottom: 15px;">Community Submission</div>
+                    <div class="review-header">
+                        <h1 class="review-title" style="margin: 0 0 12px 0;">${review.site?.name || 'Unknown'}</h1>
+                        <div class="review-meta">${review.category || 'Unknown'} | Reviewed by ${review.reviewer || 'Anonymous'} | ${review.date || ''}</div>
+                        <div class="review-url"><a href="https://${review.site?.url || '#'}" target="_blank" style="color: #ff3530;">${review.site?.url || ''}</a></div>
+                        <div class="rating">${review.rating?.toFixed(1) || '0.0'}</div>
+                        ${bnwBadge}
+                    </div>
+                    <div class="review-body" style="margin-top: 25px;">${paragraphs}</div>
+                    <div class="verdict-box" style="margin-top: 25px;"><strong>VERDICT:</strong> ${review.verdict || ''}</div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.remove();
+            });
+        });
+}
 </script>
 
 </body>
