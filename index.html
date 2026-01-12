@@ -27,13 +27,18 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
     <td class="nav">
-        <a href="index.html">Home</a>
-        <a href="archive.html">Reviews</a>
-        <a href="lists.html">Lists</a>
-        <a href="features.html">Features</a>
-        <a href="deals.html">Deals</a>
-        <a href="generator.html">Generator</a>
-        <a href="about.html">About</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="archive.html">Reviews</a>
+            <a href="features.html">Features</a>
+            <a href="deals.html">Deals</a>
+            <a href="generator.html">Generator</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-search">
+            <input type="text" id="navSearchInput" class="nav-search-input" placeholder="Search reviews...">
+            <div id="navSearchResults" class="nav-search-results"></div>
+        </div>
     </td>
 </tr>
 </table>
@@ -332,6 +337,7 @@ function viewCommunityReview(reviewId) {
     window.location.href = 'community.html?view=' + reviewId;
 }
 </script>
+<script src="nav-search.js"></script>
 
 </body>
 </html>
