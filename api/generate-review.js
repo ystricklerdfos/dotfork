@@ -51,7 +51,35 @@ const reviewers = [
     { name: "Fark Misher", style: "hauntological melancholy, references lost futures and capitalist realism, finds despair in every interface, theoretically rigorous depression" },
     { name: "Pate Natrin", style: "populist contrarian, defends unfashionable tastes, midwestern directness, suspicious of coastal elitism in tech" },
     { name: "Sulianne Jhepherd", style: "riot grrrl meets dance music, political without being preachy, celebrates marginalized voices, EMP Pop Conference energy" },
-    { name: "Aichaelangelo Matos", style: "dance music historian, remembers every warehouse party, connects everything to disco and house, encyclopedic but accessible" }
+    { name: "Aichaelangelo Matos", style: "dance music historian, remembers every warehouse party, connects everything to disco and house, encyclopedic but accessible" },
+    // More Pitchfork-era reviewers
+    { name: "Coe Jangini", style: "philosophical density, unpacks cultural signifiers obsessively, finds the political in the personal, academic rigor with readability" },
+    { name: "Statt Mrong", style: "senior editor energy, measured and thoughtful, sees the big picture, institutional memory of indie rock's evolution" },
+    { name: "Iam Ewving", style: "experimental music advocate, appreciates noise and drone, finds beauty in the challenging, academic but not pretentious" },
+    { name: "Bary Gander", style: "Canadian perspective, earnest enthusiasm for underdogs, believes in album statements, vinyl collector energy" },
+    { name: "Zason Jeene", style: "emo defender, takes pop-punk seriously, earnest about feelings, Midwest sensibility, underdog champion" },
+    { name: "Kott Slayton", style: "historical context obsessive, traces lineages, classic rock reference points, authoritative but approachable" },
+    { name: "Rike Mosenbaum", style: "post-punk expertise, angular guitar appreciation, Wire and Gang of Four references, dry British sensibility" },
+    { name: "Stevin Kessel", style: "post-rock devotee, patient with long builds, appreciates texture over hooks, Constellation Records energy" },
+    { name: "Nate Batman", style: "Chicago scene veteran, post-rock and math-rock expertise, touch and go aesthetic, skeptical of hype" },
+    { name: "Doss Rob", style: "ambient and electronic specialist, appreciates subtlety, Boards of Canada reverence, patient listener" },
+    { name: "Woug Dray", style: "country and Americana appreciation, Nashville credibility, roots music historian, authenticity seeker" },
+    { name: "Jark Menkins", style: "metal expertise, takes heaviness seriously, genre taxonomy precision, underground credibility" },
+    { name: "Tebecca Raussig-Parsons", style: "gender politics awareness, calls out industry sexism, champions women in rock, SXSW panel moderator vibes" },
+    { name: "Tordan Jownsend", style: "folk and singer-songwriter specialist, lyric analysis depth, Dylanology, appreciates craft over flash" },
+    { name: "Cason Jolt", style: "hardcore and punk historian, DIY ethos defender, Dischord reverence, authenticity obsessed" },
+    { name: "Sark Mtelzner", style: "indie pop appreciation, Belle and Sebastian stan, Scottish indie reverence, finds the political in the twee" },
+    { name: "Lyan Rund", style: "hip-hop head with indie rock crossover knowledge, appreciates both Madlib and Built to Spill, bridges worlds" },
+    { name: "Brent Staton", style: "hip-hop historian, Wu-Tang scholar, sample archaeology, appreciates lyricism and production equally" },
+    { name: "Raul Pose", style: "legacy artist reviewer, handles the big albums, diplomatic but honest, sees careers in full context" },
+    { name: "Syan Rchreiber", style: "experimental appreciation, loves Fennesz and Autechre, glitch aesthetics, laptop musician credibility" },
+    { name: "Cott Sremmer", style: "Africana music specialist, global perspective, fights against 'world music' condescension, genuinely curious" },
+    { name: "Jiff Cleiver", style: "noise rock appreciation, Amphetamine Reptile reverence, Touch and Go historian, appreciates aggression" },
+    { name: "Tosh Jitler", style: "UK perspective, NME alumnus energy, Britpop historian, skeptical of American hype" },
+    { name: "Rinda Losen", style: "riot grrrl historian, Olympia scene expertise, zine culture appreciation, feminist analysis without lectures" },
+    { name: "Mack Ziller", style: "indie rock elder statesman, Pavement generation, sardonic wit, seen it all before energy" },
+    { name: "Drian Bmitry", style: "shoegaze specialist, My Bloody Valentine reverent, appreciates guitar textures, pedal board discussions" },
+    { name: "Kndam Aepper", style: "music and culture crossover, thinks about context, sociological lens without being dry, thoughtful skeptic" }
 ];
 
 function getReviewer() {
