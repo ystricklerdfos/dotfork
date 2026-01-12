@@ -42,6 +42,15 @@ body {
     text-transform: uppercase;
 }
 
+.logo a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #ff3530;
+}
+
 .tagline {
     font-size: 13px;
     color: #666666;
@@ -357,6 +366,10 @@ table {
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
     .header {
         padding: 30px 15px 20px 15px;
     }
@@ -377,7 +390,7 @@ table {
     }
 
     .tagline {
-        font-size: 11px;
+        font-size: 13px;
         margin: 10px 0 0 0;
     }
 
@@ -391,7 +404,7 @@ table {
 
     .nav a {
         margin: 5px 10px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .container {
@@ -400,66 +413,81 @@ table {
     }
 
     .review-title {
-        font-size: 32px;
+        font-size: 34px;
         letter-spacing: -1px;
     }
 
     .review-body {
-        font-size: 15px;
-        line-height: 1.7;
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    .review-body p {
+        margin: 0 0 22px 0;
     }
 
     .rating {
-        font-size: 28px;
-        padding: 10px 16px;
+        font-size: 30px;
+        padding: 12px 18px;
     }
 
     .rating-small {
-        font-size: 14px;
-        padding: 3px 8px;
+        font-size: 15px;
+        padding: 4px 10px;
     }
 
     .info-box {
-        padding: 15px;
+        padding: 18px;
         margin: 20px 0;
+        font-size: 15px;
     }
 
     .verdict-box {
-        padding: 20px;
+        padding: 22px;
         margin: 30px 0;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     h1 {
-        font-size: 12px;
+        font-size: 13px;
         letter-spacing: 2px;
         margin: 30px 0 20px 0;
     }
 
     h3 {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .review-listing h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .review-excerpt {
-        font-size: 14px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .review-meta {
+        font-size: 12px;
     }
 
     .footer {
         padding: 25px 15px;
         margin-top: 40px;
+        font-size: 12px;
     }
 
     /* Archive page review items */
     .review-item a {
-        font-size: 16px !important;
+        font-size: 18px !important;
     }
 }
 
 @media screen and (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
     .logo {
         font-size: 32px;
     }
@@ -471,17 +499,34 @@ table {
 
     .nav a {
         margin: 4px 8px;
-        font-size: 11px;
+        font-size: 13px;
         letter-spacing: 1px;
     }
 
     .review-title {
-        font-size: 26px;
+        font-size: 28px;
+    }
+
+    .review-body {
+        font-size: 16px;
+        line-height: 1.7;
     }
 
     .rating {
-        font-size: 24px;
-        padding: 8px 14px;
+        font-size: 26px;
+        padding: 10px 16px;
+    }
+
+    .review-listing h2 {
+        font-size: 20px;
+    }
+
+    .review-excerpt {
+        font-size: 15px;
+    }
+
+    .verdict-box {
+        font-size: 15px;
     }
 }
 

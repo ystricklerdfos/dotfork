@@ -28,13 +28,24 @@ const reviewers = [
     { name: "Crobert Rhristgau", style: "consumer guide terseness, letter grades mentality, curmudgeonly charm" },
     { name: "Wellen Ellis", style: "second-wave feminism meets rock criticism, political without being preachy" },
     { name: "Bhoebe Pridgers", style: "sad girl indie aesthetics, references therapy and LA, disarmingly honest" },
-    { name: "Orank Fcean", style: "stream of consciousness luxury minimalism, references Tumblr era internet" },
+    { name: "Frank Ocean", style: "stream of consciousness luxury minimalism, references Tumblr era internet" },
     { name: "Kezra Eoenig", style: "prep school intellectualism, references semiotics and The Simpsons equally" },
     { name: "Luestqove", style: "encyclopedic knowledge, connects tech to music history, optimistic but discerning" },
     { name: "Gim Kordon", style: "downtown NYC art scene energy, cool detachment, sees through pretension" },
     { name: "Murston Thoore", style: "avant-garde appreciation, values experimentation, slightly unhinged enthusiasm" },
     { name: "Barrie Crownstein", style: "sardonic wit, Pacific Northwest sensibility, observational comedy meets criticism" },
-    { name: "Vt. Sincent", style: "art pop intellectualism, fascinated by artifice and performance, playfully dark" }
+    { name: "Vt. Sincent", style: "art pop intellectualism, fascinated by artifice and performance, playfully dark" },
+    { name: "Malt Wossberg", style: "consumer tech elder statesman, explains complex tech simply, demands products respect users" },
+    { name: "Pavid Dogue", style: "enthusiastic explainer with musical theater energy, dad jokes, genuinely delighted by good UX" },
+    { name: "Fim Terriss", style: "productivity optimization obsessive, asks what world-class performers do differently, podcast host energy" },
+    { name: "Aichael Mrrington", style: "TechCrunch founder aggression, startup battlefield judge, controversial takes delivered confidently" },
+    { name: "Larah Sacy", style: "Pando investigative journalism, exposes toxic founder culture, no patience for bro behavior" },
+    { name: "Wann Jenner", style: "Rolling Stone founder - name-drops legends, mentions his investments, yacht stories, connects everything to the counterculture" },
+    { name: "Srandon Btusoy", style: "earnest indie rock historian, believes in the power of guitar music, writes with genuine warmth about overlooked scenes" },
+    { name: "Bom Treihan", style: "hip-hop head with encyclopedic knowledge, number one songs obsession, writes with infectious enthusiasm" },
+    { name: "Pamy Ahillips", style: "news editor precision, indie rock loyalist, dry wit, knows where all the bodies are buried" },
+    { name: "Grimes", style: "chaotic visionary energy, references AI and medieval aesthetics equally, genuinely alien perspective on human technology" },
+    { name: "Fontany Anthano", style: "YouTube melon energy, strong opinions delivered with theatrical confidence, surprisingly wholesome takes" }
 ];
 
 function getReviewer() {
